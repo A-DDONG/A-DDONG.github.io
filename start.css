@@ -14,8 +14,11 @@ body {
   width: 100%;
 }
 div.copy {
-  position: absolute;
+  position: fixed;
+  left: 50%;
   bottom: 0;
+  transform: translateX(-50%);
+  text-align: center;
 }
 .wrapper {
   position: absolute;
