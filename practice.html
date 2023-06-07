@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      const introText = document.querySelectorAll("span");
+
+      window.onload = () => {
+        let timer = 100;
+        introText.forEach((item) => {
+          <link rel="stylesheet" href="practice.css" />;
+          item.style.animation = `fade 500ms ${(timer += 50)}ms forwards`;
+        });
+      };
+    </script>
+    <link rel="stylesheet" href="practice.css" />
+  </head>
+
+  <body>
+    <div>
+      <p>
+        <span>G</span>
+        <span>L</span>
+        <span>O</span>
+        <span>B</span>
+        <span>A</span>
+        <span>L</span>
+      </p>
+      <p>
+        <span>R</span>
+        <span>E</span>
+        <span>T</span>
+        <span>A</span>
+        <span>I</span>
+        <span>L</span>
+        <span>&nbsp</span>
+        <span>T</span>
+        <span>E</span>
+        <span>C</span>
+        <span>H</span>
+      </p>
+      <p>
+        <span>L</span>
+        <span>E</span>
+        <span>A</span>
+        <span>D</span>
+        <span>E</span>
+        <span>R</span>
+      </p>
+    </div>
+  </body>
+</html>
