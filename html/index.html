@@ -5,7 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DAMPLES</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <style>
+      .fadeIn {
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var damplesWrapper = document.querySelector(".wrapper");
+        damplesWrapper.classList.add("fadeIn");
+      };
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -17,10 +38,10 @@
     <div
       class="click"
       style="cursor: pointer"
-      onclick="location.href='main2.html';"
+      onclick="location.href='/html/main2.html';"
     >
       <div>Cick Here</div>
-      <img src="bamboo.png" alt="Bamboo" class="bamboo_image" />
+      <img src="/doc/bamboo.png" alt="Bamboo" class="bamboo_image" />
     </div>
     <div class="copy">
       <footer>

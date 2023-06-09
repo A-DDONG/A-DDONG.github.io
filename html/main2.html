@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>start</title>
+    <link rel="stylesheet" href="/css/main2.css" />
+    <script>
+      function navigateToPage(page) {
+        window.location.href = page;
+      }
+
+      function showContent(contentId) {
+        // 모든 content 숨기기
+        var contents = document.getElementsByClassName("content");
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].style.display = "none";
+        }
+
+        // 선택한 content 보이기
+        var content = document.getElementById(contentId);
+        content.style.display = "block";
+
+        // 지도 이미지 변경
+        var contentImage = content.getElementsByTagName("img")[0];
+        if (contentId === "content1") {
+          contentImage.src = "/doc/지도1.png"; // Content 1에 해당하는 이미지 경로로 변경
+        } else if (contentId === "content2") {
+          contentImage.src = "/doc/지도2.png"; // Content 2에 해당하는 이미지 경로로 변경
+        } else if (contentId === "content3") {
+          contentImage.src = "/doc/지도3.png"; // Content 3에 해당하는 이미지 경로로 변경
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="title">DAMPLES</div>
+    <hr class="top" />
+    <div class="menu-container">
+      <div class="menu" onclick="navigateToPage('/html/page1.html')">소개</div>
+      <div class="menu" onclick="navigateToPage('/html/page2.html')">소식</div>
+      <div class="menu" onclick="navigateToPage('/html/page3.html')">
+        코스추천
+      </div>
+      <div class="menu" onclick="navigateToPage('/html/page4.html')">리뷰</div>
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="검색어를 입력해주세요"
+        />
+        <button class="search-button">검색</button>
+      </div>
+    </div>
+    <hr class="bottom" />
+    <div class="map">
+      <div class="map-menu-container">
+        <div class="map-menu" onclick="showContent('content1')">핫플</div>
+        <div class="map-menu" onclick="showContent('content2')">먹방</div>
+        <div class="map-menu" onclick="showContent('content3')">숙박</div>
+      </div>
+
+      <div class="content">
+        <div id="content1" class="map-image" style="display: none">
+          <img src="/doc/지도1.png" alt="Content 1" />
+          <h2>Content 1</h2>
+        </div>
+
+        <div id="content2" class="map-image" style="display: none">
+          <img src="/doc/지도2.png" alt="Content 2" />
+          <h2>Content 2</h2>
+          <!-- Content 2 내용 추가 -->
+        </div>
+
+        <div id="content3" class="map-image" style="display: none">
+          <img src="/doc/지도3.png" alt="Content 3" />
+          <h2>Content 3</h2>
+          <!-- Content 3 내용 추가 -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
