@@ -4,7 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메인화면</title>
-    <link rel="stylesheet" href="../css/main_1.css">    
+    <link rel="stylesheet" href="../css/main_1.css"> 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      let tabHeader = document.getElementsByClassName("tab-header")[0];
+      let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
+      let tabBody = document.getElementsByClassName("tab-body")[0];
+
+      let tabsPane = tabHeader.getElementsByTagName("div");
+
+      for(let i=0;i<tabsPane.length;i++){
+        tabsPane[i].addEventListener("click",function(){
+          tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+          tabsPane[i].classList.add("active");
+          tabBody.getElementsByClassName("active")[0].classList.remove("active");
+          tabBody.getElementsByTagName("div")[i].classList.add("active");
+          
+          tabIndicator.style.left = `calc(calc(100% / 3) * ${i})`;
+        });
+      }
+    });
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -21,25 +41,39 @@
         </div>
       </div>
       <div class="container">
-        <div class="main-box">
-         <div class="map-menu">
-          <ul class ="list">
-            <li class ="is_on">
-              <a href="#tab1" class="btn">소개</a>
-              <div id="tab1" class="cont"><img src="../doc/지도4.png" alt="지도4" width="600px"></div>
-            </li>
-            <li>
-              <a href="#tab2" class="btn">먹방</a>
-              <div id="tab2" class="cont"><img src="../doc/지도4.png" alt="지도4" width="600px"></div>
-            </li>
-            <li>
-              <a href="#tab3" class="btn">핫플</a>
-              <div id="tab3" class="cont"><img src="../doc/지도4.png" alt="지도4" width="600px"></div>
-            </li>
-
-           </ul>
+        <div class="tabs">
+          <div class="tab-header">
+            <div class="active">
+              <i class="fa fa-code"></i> 핫플
+            </div>
+            <div>
+              <i class="fa fa-pencil-square-o"></i> 먹방
+            </div>
+            <div>
+              <i class="fa fa-bar-chart"></i> 숙박
+            </div>
+            <!-- <div>
+              <i class="fa fa-envelope-o"></i> Contact
+            </div> -->
+          </div>
+          <div class="tab-indicator"></div>
+          <div class="tab-body">
+            <div class="active">
+              <h2>핫플</h2>
+              <img src="../doc/지도4.png" alt="지도" width="800px">
+            </div>
+            <div>
+              <h2>먹방<h2>
+              <img src="../doc/지도4.png" alt="지도" width="800px">
+            </div>
+            <div>
+              <h2>숙박<h2>
+              <img src="../doc/지도4.png" alt="지도" width="800px">
+            </div>
+          </div>
         </div>
-
+        <!-- <div class="main-box">
+        </div> -->
       </div>
       <div id="footer">
       </div>
