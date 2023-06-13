@@ -28,6 +28,10 @@ body {
 .header h1 {
   font-size: 70px;
 }
+.header h3,
+h1:hover {
+  cursor: pointer;
+}
 .menu-box {
   border-top: 5px solid white;
   /* border-bottom: 5px solid white; */
@@ -135,6 +139,17 @@ body {
   opacity: 1;
   transform: scale(1);
   position: relative;
+}
+.event {
+  float: right;
+  margin-right: 200px;
+}
+.event p {
+  color: black;
+  font-size: 50px;
+}
+.event-box {
+  border: 5px solid black;
 }
 
 @font-face {
