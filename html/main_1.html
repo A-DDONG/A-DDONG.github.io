@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메인화면</title>
-    <link rel="stylesheet" href="../css/main_1.css"> 
+    <link rel="stylesheet" href="../css/main_1.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
       let tabHeader = document.getElementsByClassName("tab-header")[0];
@@ -24,25 +25,69 @@
         });
       }
       });
-
+      
     </script>
+
+    <script>
+      // 탭박스 이벤트
+        $(document).ready(function(){
+                    
+                    $(function(){
+                        $('.prod_tab > li:first-child, #list01_1').addClass('active');
+            
+                        $('.prod_tab > li > a').on('click',function(e){
+                            let tabNum = $(this).parent('li').index() + 1;
+                            $('.prod_tab > li, #list01_1, .prod_list01').removeClass('active');
+                            $(this).parent('li').addClass('active');	
+                            $('#list01_' + tabNum).addClass('active');
+                            return false;
+                        });
+                    });
+                    
+                });
+    </script>
+
+    <style>
+       .prod_wrap .prod_list01 {display: none;}
+       .prod_wrap .prod_list01.active {display: block;}
+    </style>
+    
   </head>
   <body>
     <div id="wrapper">
       <div class="header">
         <h3 onclick="location.href='../html/main_1.html'">담양 HOT PLACE!</h2>
         <h1 onclick="location.href='../html/main_1.html'">DAMPLES</h1>
+
         <div class="menu-box">
-            <ul>
-                <li onclick ="location.href='../html/page1.html'">소개</li>
-                <li onclick ="location.href='../html/page2.html'">소식</li>
-                <li onclick ="location.href='../html/page3.html'">코스추천</li>
-                <li onclick ="location.href='../html/page4.html'">리뷰</li>
+            <ul class="prod_tab">
+                <li class="active"><a href="#">소개</a></li>
+                <li><a href="#">소식</a></li>
+                <li><a href="#">코스추천</a></li>
+                <li><a href="#">리뷰</a></li>
             </ul>
         </div>
+
       </div>
       <div class="container">
-        <div class="tabs">
+        <div class="prod_wrap">
+          <div class="prod_list01 active" id="list01_1">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ea rerum magni voluptates velit ipsam magnam provident, iste veniam non corporis sed, neque, voluptatibus impedit libero quae officia! Saepe, a!
+          </div>
+
+          <div class="prod_list01" id="list01_2">
+            22
+          </div>
+
+          <div class="prod_list01" id="list01_3">
+            33
+          </div>
+
+          <div class="prod_list01" id="list01_4">
+            44
+          </div>
+        </div>
+        <!-- <div class="tabs">
           <div class="tab-header">
             <div class="active">
               <i class="fa fa-code"></i> 핫플
@@ -53,9 +98,6 @@
             <div>
               <i class="fa fa-bar-chart"></i> 숙박
             </div>
-            <!-- <div>
-              <i class="fa fa-envelope-o"></i> Contact
-            </div> -->
           </div>
           <div class="tab-indicator"></div>
           <div class="tab-body">
@@ -73,6 +115,8 @@
             </div>
           </div>
         </div>
+      -->
+
         <!-- <div class="main-box">
         </div> -->
         <!-- <div class="event">

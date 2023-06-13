@@ -19,33 +19,43 @@ body {
 }
   */
 
+
+#wrapper {
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+}
+
 .header {
+  width: 1000px;
   text-align: center;
   color: inherit;
   font-family: "SBAggroB";
   background-color: #1d9042;
   color: white;
-  position: fixed;
+  /* position: fixed; */
   padding-top: 30px;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-
+  margin: 0 auto;
 }
+
 .header h3 {
   font-size: 20px;
 }
+
 .header h1 {
   font-size: 70px;
 }
-.header h3,
-h1:hover {
+
+.header h3, h1:hover {
   cursor: pointer;
 }
 
 .menu-box {
-  border-top: 5px solid white;
+  /* border-top: 5px solid white; */
   /* border-bottom: 5px solid white; */
   padding: 5px;
   /* margin-top: 20px; */
@@ -57,25 +67,27 @@ h1:hover {
 .menu-box ul {
   list-style: none;
   display: flex;
-  width: 1200px;
+  width: 1000px;
   justify-content: center;
   margin: 0px auto;
   font-size: 30px;
 }
 .menu-box li {
-  margin: 0% 50px 0px 50px;
+  /* margin: 0% 50px 0px 50px; */
   background-color: #1d9042;
   color: white;
-  padding: 0px 30px 0px 30px;
-  width: 180px;
+  /* padding: 0px 30px 0px 30px; */
+  /* width: 180px; */
   /* height: 70px; */
   line-height: 70px;
   cursor: pointer;
+  padding: 0 60px;
 }
-.menu-box li:hover {
+
+/* .menu-box li:hover {
   background-color: white;
   color: #1d9042;
-}
+} */
 /* .main-box {
   background-color: white;
   width: 1200px;
@@ -87,7 +99,7 @@ h1:hover {
   top: 230px;
   left: 10px;
   /* transform: translate(-50%, -50%); */
-  width: 1200px;
+  width: 1000px;
   height: 1500px;
   background: #f5f5f5;
   padding: 20px 30px;
@@ -164,6 +176,13 @@ h1:hover {
   border: 5px solid black;
 }
 
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #1d9042;
+}
+
 @font-face {
   font-family: "SBAggroB";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
@@ -184,4 +203,34 @@ h1:hover {
     format("woff2");
   font-weight: normal;
   font-style: normal;
+}
+
+
+/* 한비가추가 */
+.prod_wrap {
+  height: 720px;
+  background-color: #fff;
+  border-radius: 10px;
+  transform: translateY(-18px);
+  padding: 20px;
+}
+
+
+.prod_tab li > a {
+  color: #fff;
+  text-decoration-line: none;
+}
+
+.prod_tab li.active {
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  background-color: #fff;
+}
+
+.prod_tab li.active > a {
+  color: #000;
+}
+
+.main {
+  
 }
