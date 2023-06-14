@@ -26,7 +26,7 @@ body {
 }
 
 .header {
-  width: 1000px;
+  width: 1200px;
   text-align: center;
   color: inherit;
   font-family: "SBAggroB";
@@ -67,7 +67,7 @@ h1:hover {
 .menu-box ul {
   list-style: none;
   display: flex;
-  width: 1000px;
+  width: 1200px;
   justify-content: center;
   margin: 0px auto;
   font-size: 30px;
@@ -96,17 +96,17 @@ h1:hover {
 } */
 .tabs {
   position: absolute;
-  top: 30px;
-  left: 10px;
+  /* top: 5px; */
+  /* left: 10px; */
   /* transform: translate(-50%, -50%); */
   width: 600px;
-  height: 600px;
+  height: 900px;
   background: #f5f5f5;
   padding: 20px 30px;
   overflow: hidden;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 5px 10px 5px #ccc;
-  border: 5px solid red;
+  border: 3px solid red;
 }
 .tabs .tab-header {
   height: 60px;
@@ -129,7 +129,7 @@ h1:hover {
   margin-bottom: 5px;
 }
 
-.tabs .tab-header > div.tab-active {
+.tabs .tab-header > div.active {
   color: #00acee;
 }
 .tabs .tab-indicator {
@@ -158,8 +158,8 @@ h1:hover {
   justify-content: center;
   align-items: center;
 }
-.tabs .tab-body > div.tab-active {
-  top: 0px;
+.tabs .tab-body > div.active {
+  top: 0;
   opacity: 1;
   transform: scale(1);
   position: relative;
@@ -175,9 +175,33 @@ h1:hover {
 .event-box {
   border: 5px solid black;
 }
-
+.search-box {
+  width: 250px;
+  height: 70px;
+  /* border: 1px solid #1b5ac2; */
+  /* background: #fff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-box input {
+  font-size: 16px;
+  width: 200px;
+  padding: 10px;
+  outline: none;
+  float: left;
+}
+.search-box button {
+  width: 50px;
+  height: 42px;
+  background: #1b5ac2;
+  outline: none;
+  float: right;
+  color: #fff;
+}
 .container {
-  width: 1000px;
+  width: 1200px;
+  height: 2000px;
   margin: 0 auto;
   padding: 10px;
   background-color: #1d9042;
@@ -207,7 +231,7 @@ h1:hover {
 
 /* 한비가추가 */
 .prod_wrap {
-  height: 720px;
+  height: 2000px;
   background-color: #fff;
   border-radius: 10px;
   transform: translateY(-18px);
@@ -227,7 +251,4 @@ h1:hover {
 
 .prod_tab li.active > a {
   color: #000;
-}
-
-.main {
 }

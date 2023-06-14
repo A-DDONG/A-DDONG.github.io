@@ -8,39 +8,27 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        let tabHeader = document.getElementsByClassName("tab-header")[0];
-        let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
-        let tabBody = document.getElementsByClassName("tab-body")[0];
-        let mainContent = document.getElementsByClassName("main")[0];
-    
-        let tabsPane = tabHeader.getElementsByTagName("div");
-    
-        for (let i = 0; i < tabsPane.length; i++) {
-          tabsPane[i].addEventListener("click", function () {
-            // 메인 화면 숨기기
-            mainContent.style.display = "none";
-    
-            // 탭 선택 처리
-            tabHeader.getElementsByClassName("active")[0].classList.remove("active");
-            tabsPane[i].classList.add("active");
-    
-            // 탭 내용 보이기 처리
-            tabBody.getElementsByClassName("active")[0].classList.remove("active");
-            tabBody.getElementsByTagName("div")[i].classList.add("active");
-    
-            // 탭 인디케이터 위치 설정
-            tabIndicator.style.left = `calc(calc(100% / 3) * ${i})`;
-    
-            // 메인 화면 보이기
-            setTimeout(function () {
-              mainContent.style.display = "block";
-            }, 500);
-          });
-        }
+      let tabHeader = document.getElementsByClassName("tab-header")[0];
+      let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
+      let tabBody = document.getElementsByClassName("tab-body")[0];
+
+      let tabsPane = tabHeader.getElementsByTagName("div");
+
+      for(let i=0;i<tabsPane.length;i++){
+        tabsPane[i].addEventListener("click",function(){
+          tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+          tabsPane[i].classList.add("active");
+          tabBody.getElementsByClassName("active")[0].classList.remove("active");
+          tabBody.getElementsByTagName("div")[i].classList.add("active");
+          
+          tabIndicator.style.left = `calc(calc(100% / 3) * ${i})`;
+        });
+      }
       });
+      
     </script>
-    
-    
+
+            
     <script>
         $(document).ready(function () {
           $(function () {
@@ -56,6 +44,20 @@
            });
         });
       });
+    </script>
+    <script>
+      $(document).ready(function () {
+      $(".prod_tab > li > a").on("click", function (e) {
+        e.preventDefault();
+        let tabNum = $(this).parent("li").index() + 1;
+        $(".prod_tab > li, .prod_list01").removeClass("active");
+        $(this).parent("li").addClass("active");
+        $("#list01_" + tabNum).addClass("active");
+
+        // 숨기고 싶은 클래스를 추가하면 됩니다.
+        $(".tabs").hide();
+      });
+    });
     </script>
     <style>
        .prod_wrap .prod_list01 {display: none;}
@@ -74,15 +76,18 @@
                 <li><a href="#">소식</a></li>
                 <li><a href="#">코스추천</a></li>
                 <li><a href="#">리뷰</a></li>
+                <div class="search-box">
+                  <input type="text" placeholder="검색어 입력">
+                  <button>검색</button>
+                </div>
             </ul>
         </div>
-
       </div>
       <div class="container">
         <div class="prod_wrap">
-          <!-- <div class="tabs">
+          <div class="tabs">
             <div class="tab-header">
-              <div class="tab-active">
+              <div class="active">
                 <i class="fa fa-code"></i> 핫플
               </div>
               <div>
@@ -94,20 +99,20 @@
             </div>
             <div class="tab-indicator"></div>
             <div class="tab-body">
-              <div class="tab-active">
-                <h2>핫플</h2>
-                <img src="../doc/지도4.png" alt="지도" width="800px">
+              <div class="active">
+                <!-- <h2></h2> -->
+                <img src="../doc/지도4.png" alt="지도" width="480px">
               </div>
               <div>
-                <h2>먹방<h2>
-                <img src="../doc/지도4.png" alt="지도" width="800px">
+                <!-- <h2>먹방<h2> -->
+                <img src="../doc/지도4.png" alt="지도" width="480px">
               </div>
               <div>
-                <h2>숙박<h2>
-                <img src="../doc/지도4.png" alt="지도" width="800px">
+                <!-- <h2>숙박<h2> -->
+                <img src="../doc/지도4.png" alt="지도" width="480px">
               </div>
             </div>
-          </div> -->
+          </div>
           <div class="prod_list01 active" id="list01_1">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ea rerum magni voluptates velit ipsam magnam provident, iste veniam non corporis sed, neque, voluptatibus impedit libero quae officia! Saepe, a!
           </div>
@@ -136,3 +141,5 @@
     </div>
   </body>
 </html>
+
+
