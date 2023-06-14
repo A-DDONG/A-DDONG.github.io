@@ -1,8 +1,34 @@
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MYHaemalgeunSangsang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYHaemalgeunSangsang.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration-line: none;
 }
+
 html {
   width: 100vw;
   height: 100vh;
@@ -21,7 +47,7 @@ body {
 
 #wrapper {
   width: 100%;
-  background-color: #fff;
+  background-color: #1d9042;
   height: 100%;
 }
 
@@ -55,15 +81,13 @@ h1:hover {
 }
 
 .menu-box {
-  /* border-top: 5px solid white; */
-  /* border-bottom: 5px solid white; */
   padding: 5px;
-  /* margin-top: 20px; */
-  /* margin-bottom: 20px; */
   font-family: "SBAggroB";
   font-weight: bold;
   background-color: #1d9042;
+  display: flex;
 }
+
 .menu-box ul {
   list-style: none;
   display: flex;
@@ -175,33 +199,40 @@ h1:hover {
 .event-box {
   border: 5px solid black;
 }
+.search-box  > input {
+  padding: 10px 55px 10px 20px;
+  height: 60px;
+  font-size: 18px;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
 .search-box {
-  width: 200px;
-  height: 70px;
-  /* border: 1px solid #1b5ac2; */
-  /* background: #fff; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* text-align: center; */
-  right: 350px;
-  position: absolute;
+  position: relative;
+  margin-right: 10px;
 }
-.search-box input {
-  font-size: 16px;
-  width: 120px;
-  padding: 10px;
-  outline: none;
-  float: left;
-}
-.search-box button {
-  width: 50px;
-  height: 42px;
-  background: #888;
-  outline: none;
-  float: right;
+
+.search-box  > input::placeholder {
   color: #fff;
 }
+
+.search-box .btn_search {
+  position: absolute;
+    top: 7px;
+    right: 10px;
+    width: auto;
+    outline: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.search-box .btn_search > img {
+  border: 0;
+}
+
 .container {
   width: 1200px;
   height: 2000px;
@@ -210,27 +241,6 @@ h1:hover {
   background-color: #1d9042;
 }
 
-@font-face {
-  font-family: "SBAggroB";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "LINESeedKR-Bd";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "MYHaemalgeunSangsang";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYHaemalgeunSangsang.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 
 /* 한비가추가 */
 .prod_wrap {
@@ -254,4 +264,40 @@ h1:hover {
 
 .prod_tab li.active > a {
   color: #000;
+}
+
+.dam_main {
+  display: flex;
+  justify-content: center
+}
+
+.main_tab {
+  display: inline-block;
+  width: 113px;
+}
+.main_tab li {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px;
+  width: 130px;
+  text-align: center;
+}
+
+.main_tab li a {
+  color: #000;
+}
+
+.main_tab li.active a {
+  color: #1d9042;
+}
+
+.main_tab_cont {
+  display: flex;
+}
+
+.main_event {
+  width: 300px;
+}
+.main_event > h1 {
 }
