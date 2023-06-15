@@ -6,6 +6,20 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "SBAggroM";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SBAggroL";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "LINESeedKR-Bd";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
     format("woff2");
@@ -81,7 +95,7 @@ h1:hover {
 
 .menu-box {
   padding: 5px;
-  font-family: "SBAggroB";
+  font-family: "SBAggroM";
   font-weight: bold;
   background-color: #1d9042;
   display: flex;
@@ -106,7 +120,12 @@ h1:hover {
   cursor: pointer;
   padding: 0 60px;
 }
-
+.menu-box ul :hover {
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: black;
+}
 /* .menu-box li:hover {
   background-color: white;
   color: #1d9042;
@@ -283,6 +302,12 @@ h1:hover {
   text-align: center;
   /* border: 1px solid red; */
   background-color: #e0efdc;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.main_tab li:active,
+.main_tab li:hover {
+  background-color: #ff9d78;
 }
 
 .main_tab li a {
@@ -305,6 +330,7 @@ h1:hover {
 .main_event {
   width: 250px;
   border: 3px solid red;
+  padding-left: 10px;
 }
 .main_event > h1 {
 }
@@ -327,6 +353,9 @@ h1:hover {
   outline: none;
   border: none;
   margin: 1px;
+  font-family: "LINESeedKR-Bd";
+
+  font-size: 20px;
 }
 .naver_search .btn_search {
   background-color: #00c73c;
@@ -336,4 +365,88 @@ h1:hover {
 }
 .naver_search .btn_search:hover {
   cursor: pointer;
+}
+.blog {
+  position: relative;
+  top: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.blog > p {
+  padding-left: 10px;
+  font-family: "LINESeedKR-Bd";
+}
+.blog:hover {
+  cursor: pointer;
+}
+.damyang_web {
+  position: relative;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.damyang_web > p {
+  font-family: "LINESeedKR-Bd";
+  padding-left: 10px;
+}
+.damyang_web :hover {
+  cursor: pointer;
+}
+
+/* 소개 */
+.prod_list01.active > p.sogae {
+  font-size: 40px;
+  font-family: "LINESeedKR-Bd";
+}
+.parent {
+  width: 100%;
+  height: 300px;
+  margin: 10px auto;
+  display: flex;
+}
+
+.first {
+  border: 1px solid red;
+  flex: 1;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  background-image: url(../doc/죽녹원_여름1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.second {
+  border: 1px solid green;
+  flex: 1;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.second > p.jooknok {
+  border: 1px solid black;
+  font-size: 20px;
+}
+.second > p.jooknok_e {
+  border: 1px solid red;
+}
+.third {
+  border: 1px solid blue;
+  flex: 1;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.fourth {
+  border: 1px solid black;
+  flex: 1;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
 }
