@@ -20,7 +20,6 @@
   font-style: normal;
 }
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -199,7 +198,7 @@ h1:hover {
 .event-box {
   border: 5px solid black;
 }
-.search-box  > input {
+.search-box > input {
   padding: 10px 55px 10px 20px;
   height: 60px;
   font-size: 18px;
@@ -214,19 +213,19 @@ h1:hover {
   margin-right: 10px;
 }
 
-.search-box  > input::placeholder {
+.search-box > input::placeholder {
   color: #fff;
 }
 
 .search-box .btn_search {
   position: absolute;
-    top: 7px;
-    right: 10px;
-    width: auto;
-    outline: none;
-    background: none;
-    border: 0;
-    cursor: pointer;
+  top: 7px;
+  right: 10px;
+  width: auto;
+  outline: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 
 .search-box .btn_search > img {
@@ -240,7 +239,6 @@ h1:hover {
   padding: 10px;
   background-color: #1d9042;
 }
-
 
 /* 한비가추가 */
 .prod_wrap {
@@ -268,20 +266,23 @@ h1:hover {
 
 .dam_main {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 .main_tab {
   display: inline-block;
-  width: 113px;
+  /* width: 113px; */
+  font-family: "LINESeedKR-Bd";
 }
 .main_tab li {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
   display: inline-block;
   padding: 10px;
-  width: 130px;
+  width: 100px;
   text-align: center;
+  /* border: 1px solid red; */
+  background-color: #e0efdc;
 }
 
 .main_tab li a {
@@ -295,9 +296,44 @@ h1:hover {
 .main_tab_cont {
   display: flex;
 }
-
+.main_tab_cont > img {
+  border: 3px solid black;
+}
+.main_tab_pro.active {
+  border: 1px solid #e0efdc;
+}
 .main_event {
-  width: 300px;
+  width: 250px;
+  border: 3px solid red;
 }
 .main_event > h1 {
+}
+
+.naver_search {
+  position: absolute;
+  top: 10%;
+  height: 55px;
+  width: 230px;
+  border: 3px solid #00c73c;
+  display: flex;
+}
+.naver_search form {
+  display: flex;
+  width: 100%;
+}
+.naver_search > form > input {
+  height: 45px;
+  width: 80%;
+  outline: none;
+  border: none;
+  margin: 1px;
+}
+.naver_search .btn_search {
+  background-color: #00c73c;
+  /* border: 3px solid #00c73c; */
+  border: none;
+  width: 20%;
+}
+.naver_search .btn_search:hover {
+  cursor: pointer;
 }
