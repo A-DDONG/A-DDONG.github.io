@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><response><header>
+  <resultCode>0000</resultCode>
+  <resultMsg>OK</resultMsg>
+</header><body><items>
+  <item>
+    <contentid>2014192</contentid>
+    <contenttypeid>12</contenttypeid>
+    <title>가마골생태공원</title>
+    <createdtime>20150707230103</createdtime>
+    <modifiedtime>20230320160812</modifiedtime>
+    <tel></tel>
+    <telname></telname>
+    <homepage>&lt;a href=&quot;http://tour.damyang.go.kr&quot; target=&quot;_blank&quot; title=&quot;담양 문화관광 사이트로 이동&quot;&gt;http://tour.damyang.go.kr&lt;/a&gt;</homepage>
+    <booktour>0</booktour>
+    <firstimage>http://tong.visitkorea.or.kr/cms/resource/29/1941029_image2_1.jpg</firstimage>
+    <firstimage2>http://tong.visitkorea.or.kr/cms/resource/29/1941029_image3_1.jpg</firstimage2>
+    <cpyrhtDivCd>Type3</cpyrhtDivCd>
+    <areacode>38</areacode>
+    <sigungucode>7</sigungucode>
+    <cat1>A01</cat1>
+    <cat2>A0101</cat2>
+    <cat3>A01010500</cat3>
+    <addr1>전라남도 담양군 용면 용소길 261</addr1>
+    <addr2></addr2>
+    <zipcode>57300</zipcode>
+    <mapx>127.0227796727</mapx>
+    <mapy>35.4450484951</mapy>
+    <mlevel>6</mlevel>
+    <overview>담양의 가장 북쪽에 자리하고 있는 가마골은 그 일대에 그릇을 굽는 가마터가 많다고 하여 붙여진 이름이다. 여러 개의 깊은 계곡과 폭포, 기암괴석이 수려한 경관을 이루고 있어 관광객의 발길이 끊이지 않는 곳이다. 영산강의 시원으로 유명한 용소가 있고, 1986년부터 관광지로 지정, 개발되어 관광객을 위한 시설이 잘 갖춰져 있다. 원시림과 계곡이 어우러져 여름에도 서늘하며 경사가 완만하여 삼림욕 코스로도 좋지만, 취사와 물놀이는 불가하다.</overview>
+  </item>
+</items>  <numOfRows>1</numOfRows>
+  <pageNo>1</pageNo>
+  <totalCount>1</totalCount>
+</body></response>

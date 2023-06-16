@@ -26,9 +26,7 @@
       }
       });
       
-    </script>
-
-            
+    </script>  
     <script>
         $(document).ready(function () {
           $(function () {
@@ -74,6 +72,54 @@
            });
         });
       });
+    </script>
+    <script>
+        $(document).ready(function () {
+          function convertTime() {
+            var now = new Date();
+
+            var month = now.getMonth() + 1;
+            var date = now.getDate();
+
+            return month + "월" + date + "일";
+          }
+
+          var currentTime = convertTime();
+          $(".nowtime").append(currentTime);
+        });
+    </script>
+
+    <script>
+        let url =  "https://api.openweathermap.org/data/2.5/weather?q=damyang&appid=6cf9a99f768ce493e58c351ccf43588a&lang=kr&units=metric";
+
+        fetch(url)
+          .then((response) => {
+            return response.json();
+          })
+          .then((json) => {
+            console.log(json);
+
+            let result =
+              "현재온도 : " +
+              Math.floor(json.main.temp) +
+              "ºC<br>"; //소수점 버림 온도를 찍어줌
+              // "습도 : " +
+              // json.main.humidity +
+              // "%<br>" + //습도를 찍어줌
+              // "바람 : " +
+              // json.wind.speed +
+              // "m/s<br>" + //풍속을 찍어줌
+              // "최고온도 : " +
+              // Math.floor(json.main.temp_max) +
+              // "ºC<br>";  //소수점 버림 온도를 찍어줌
+              // "최저온도 : " +
+              // Math.floor(json.main.temp_min) +
+              // "ºC"; //소수점 버림 온도를 찍어줌
+            let icon = json.weather[0].icon; //아이콘 받아옴
+            document.getElementById("humidity").innerHTML = result; //result를 humidity라는 id를 가진 span에 innerHTML로 표시
+            let iconurl = document.getElementById("ic"); //img id를 iconurl이라는 이름으로 받아옴
+            iconurl.src = "https://openweathermap.org/img/wn/" + icon + ".png"; //iconurl로 src를 설정해줌
+          });
     </script>
 
     <style>
@@ -148,6 +194,13 @@
                       </button>
                     </form>
                     </div>
+                    <div class="card">
+                      <h2>담양군</h2>
+                      <img id="ic" src="" />
+                      <br />
+                      <span id="humidity"></span>
+                    </div>
+
                     <div class="blog" onclick ="window.open('https://blog.naver.com/damyanggun')">
                       <img src="../doc/블로그1.png" alt="블로그이미지" width=40px height="40px">
                       <p>대숲맑은담양</p>
