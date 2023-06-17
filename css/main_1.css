@@ -33,6 +33,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "MYHaemalgeunSangsang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYHaemalgeunSangsang.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -61,7 +68,7 @@ body {
 #wrapper {
   width: 100%;
   background-color: #1d9042;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .header {
@@ -110,7 +117,7 @@ h1:hover {
   font-size: 30px;
 }
 
-.menu-box li > a{
+.menu-box li > a {
   color: #fff;
   width: 168px;
   padding-top: 4px;
@@ -240,7 +247,6 @@ h1:hover {
 
 .container {
   width: 1200px;
-  height: 2000px;
   margin: 0 auto;
   padding: 10px;
   background-color: #1d9042;
@@ -248,7 +254,6 @@ h1:hover {
 
 /* 한비가추가 */
 .prod_wrap {
-  height: 2000px;
   background-color: #fff;
   border-radius: 10px;
   transform: translateY(-18px);
@@ -276,13 +281,12 @@ h1:hover {
   margin-right: 20px;
 }
 
-
 .main_tab li {
   margin-bottom: 10px;
 }
 
 .main_tab li a {
-  border: 2px solid #0C5C00;
+  border: 2px solid #0c5c00;
   display: inline-block;
   font-size: 25px;
   width: 130px;
@@ -296,13 +300,14 @@ h1:hover {
   border-bottom-right-radius: 15px;
 }
 
-.main_tab li a:active,.main_tab li a:hover {
-  background-color: #0C5C00;
+.main_tab li a:active,
+.main_tab li a:hover {
+  background-color: #0c5c00;
   color: #fff;
 }
 
 .main_tab li.active a {
-  background-color: #0C5C00;
+  background-color: #0c5c00;
   color: #fff;
 }
 
@@ -321,24 +326,45 @@ h1:hover {
 }
 .hot_place_info {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.hot_place_info > li {
-  width: 100%;
 
+.hot_place_info  li {
+  width: 33%;
+  margin-bottom: 25px;
 }
+
 .hot_place_info > li img {
-  width:290px
+  width: 358px;
+  border: 1px solid #666;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
+
 .hot_place_title {
   /* display: inline-block; */
   width: 290px;
+}
+
+.hot_place_title .hp_sub {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  width: 357px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 95px;
+  color: #666;
+  letter-spacing: -1px;
 }
 
 .hp_title {
   font-size: 25px;
   font-weight: bold;
   display: block;
+  color: #0c5c00;
+  padding: 10px 0px;
 }
 .main_tab_pro.active {
   border: 1px solid #e0efdc;
@@ -350,18 +376,16 @@ h1:hover {
 }
 
 .main_event > h1 {
-  border-bottom: 3px solid #0C5C00;
+  border-bottom: 3px solid #0c5c00;
   font-size: 30px;
-  color: #0C5C00;
+  color: #0c5c00;
 }
 
 .event_info {
   font-size: 20px;
 }
 .event_info li span {
-
 }
-
 
 .naver_search {
   /* position: absolute; */
@@ -394,6 +418,43 @@ h1:hover {
 .naver_search .btn_search:hover {
   cursor: pointer;
 }
+/* 날씨 시작 */
+.card {
+  font-size: 20px;
+  color: #000;
+  font-family: "MYHaemalgeunSangsang";
+  text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+  margin-top: 20px;
+  width: 300px;
+  /* height: 400px; */
+  /* background-color: #00acee; */
+  text-align: center;
+  /* border: 2px solid #1d9042; */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../doc/죽녹원_여름1.jpg");
+  /* background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(68, 165, 68))
+    ),
+    url("../doc/죽녹원_여름1.jpg"); */
+  background-size: contain;
+}
+
+#humidity {
+  line-height: 50px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.card #ic {
+  width: 50px;
+  height: 50px;
+
+}
+/* 날씨 끝*/
 .blog {
   position: relative;
   top: 25%;
@@ -447,16 +508,15 @@ h1:hover {
 
 .soga_title {
   width: 250px;
-  display: inline-block
+  display: inline-block;
 }
 
 .soga_title span:nth-child(1) {
   font-size: 25px;
   display: block;
-  color: #0C5C00;
+  color: #0c5c00;
   font-weight: bold;
 }
 .soga_title span:nth-child(2) {
   padding: 10px;
-
 }
