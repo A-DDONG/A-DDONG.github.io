@@ -7,27 +7,6 @@
     <link rel="stylesheet" href="../css/main_1.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-      let tabHeader = document.getElementsByClassName("tab-header")[0];
-      let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
-      let tabBody = document.getElementsByClassName("tab-body")[0];
-
-      let tabsPane = tabHeader.getElementsByTagName("div");
-
-      for(let i=0;i<tabsPane.length;i++){
-        tabsPane[i].addEventListener("click",function(){
-          tabHeader.getElementsByClassName("active")[0].classList.remove("active");
-          tabsPane[i].classList.add("active");
-          tabBody.getElementsByClassName("active")[0].classList.remove("active");
-          tabBody.getElementsByTagName("div")[i].classList.add("active");
-          
-          tabIndicator.style.left = `calc(calc(100% / 3) * ${i})`;
-        });
-      }
-      });
-      
-    </script>  
-    <script>
         $(document).ready(function () {
           $(function () {
            $('.prod_tab > li:first-child').removeClass('active');
@@ -72,6 +51,23 @@
            });
         });
       });
+
+// 추천코스이벤트
+      $(document).ready(function () {
+          $(function () {
+           $('.course_tab > li:first-child').addClass('active');
+           $('#course_1').addClass('active');
+
+           $('.course_tab > li > a').on('click', function (e) {
+             let tabNum = $(this).parent('li').index() + 1;
+             $('.course_tab > li, #course_1, .course_con').removeClass('active');
+             $(this).parent('li').addClass('active');
+             $('#course_' + tabNum).addClass('active');
+             return false;
+           });
+        });
+      });
+
     </script>
     <script>
         $(document).ready(function () {
@@ -123,12 +119,17 @@
           });
     </script>
 
+
     <style>
        .prod_wrap .prod_list01 {display: none;}
        .prod_wrap .prod_list01.active {display: block;}
 
        .main_tab_pro {display: none;}
        .main_tab_pro.active {display: block;}
+
+       .course_con {display: none;}
+       .course_con.active {display: block;}
+
 
     </style>
   </head>
@@ -193,10 +194,9 @@
             
             <div class="main_tab_pro active" id="main_pro01">
               <div class="main_tab_cont">
-                
                 <div class="main_cont_top">
                    <img src="../doc/지도4.png" alt="지도이미지">
-                  <div class="main_event">
+                   <div class="main_event">
                     <img src="../doc/main_event.png" alt="이달의 행사">
                     <ul class="event_info">
                       <li>
@@ -211,7 +211,6 @@
                         <span>05.05 ~ 10.10</span>
                         <p>글자가길어지면 잘려욧오오오오오오오옹</p>
                       </li>
-
                     </ul>
                     <div class="naver_search">
                       <form action="https://search.naver.com/search.naver" target="_new">
@@ -228,7 +227,6 @@
                       <br />
                       <span id="humidity"></span>
                     </div>
-
                     <div class="blog" onclick ="window.open('https://blog.naver.com/damyanggun')">
                       <p class="blog_top">담양군 공식 블로그</p>
                       <div class="blog_title">
@@ -290,54 +288,129 @@
                       </p>
                     </li>
                   </ul>
-
                 </div>
-
-
-
-
-                <!-- 하단 -->
-                <!-- <div class="hotplace">
-                  dddddddddd
-                </div> -->
-
               </div>
-
-
             </div>
-
 
 
             <div class="main_tab_pro" id="main_pro02">
               <div class="main_tab_cont">
-                <img src="../doc/지도4.png" alt="지도이미지">
-                <div class="main_event">
-                  <h1>이달의 행사</h1>
-                  <ul>
-                    <li>행사1234556</li>
-                    <li>행사1234556</li>
-                    <li>행사1234556</li>
-                    <li>행사1234556</li>
+                
+                <div class="main_cont_top">
+                   <img src="../doc/지도4.png" alt="지도이미지">
+
+                </div>
+
+                <div class="main_cont_bottom">
+                  <img src="../doc/hotplace_tit.png" alt="HOT PLACE">
+                  <img src="../doc/main_event_sub_01.png" alt="">
+                  <ul class="hot_place_info">
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
                   </ul>
+
                 </div>
               </div>
             </div>
             <div class="main_tab_pro" id="main_pro03">
               <div class="main_tab_cont">
-                <img src="../doc/지도1.png" alt="지도이미지">
-                <div class="main_event">
-                  <h1>이달의 행사</h1>
-                  <ul>
-                    <li>행사1234556</li>
-                    <li>행사1234556</li>
-                    <li>행사1234556</li>
-                    <li>행사1234556</li>
-                  </ul>
+                
+                <div class="main_cont_top">
+                   <img src="../doc/지도4.png" alt="지도이미지">
+
                 </div>
 
+                <div class="main_cont_bottom">
+                  <img src="../doc/hotplace_tit.png" alt="HOT PLACE">
+                  <img src="../doc/main_event_sub_01.png" alt="">
+                  <ul class="hot_place_info">
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                  </ul>
+
+                </div>
               </div>
             </div>
-
 
           </div>
 
@@ -426,7 +499,7 @@
                     <p class="sosik_tit">
                       <span class="common">124</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub">수강생모집진짜이거엄청어렵게도시안짜놨네이거혼자만들면은죽음이었음진짜이거상줘야댄다..ㅋㅋ나 아니었으면이거 만들지도 못했어 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                    <p class="sosik_sub"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
                   </a>
                 </li>
                 <li>
@@ -434,7 +507,7 @@
                     <p class="sosik_tit">
                       <span class="common">45546</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub">수강생모집진짜이거엄청어렵게도시안짜놨네이거혼자만들면은죽음이었음진짜이거상줘야댄다..ㅋㅋ나 아니었으면이거 만들지도 못했어 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                    <p class="sosik_sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
                   </a>
                 </li>
             </ul>
@@ -443,13 +516,56 @@
 
           <div class="prod_list01" id="list01_3">
             <img src="../doc/cource_title.png" alt="추천 코스">
+
+            <ul class="course_tab">
+              <li class="active"><a href="#">연령별</a></li>
+              <li><a href="#">반려동물동반</a></li>
+              <li><a href="#">키즈프렌드리</a></li>
+              <li><a href="#">무장애관광</a></li>
+              <li><a href="#">누구화함께</a></li>
+            </ul>
+
+            <div class="course_con active" id="course_1">
+              <ul class="course_img">
+                <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
+                <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
+              </ul>
+
+              <h3 class="course_title">보이는 끝까지 찾아다녀도 목숨이 있는</h3>
+              <p class="course_sub">
+                담양군에서 조성한 담양읍 향교리의 죽녹원이 죽림욕장으로 인기다. 관방제림과 영산강의 시원인 담양천을 끼는 향교를 지나면 바로 왼편에 보이는 대숲이 죽녹원이다
+                <br>
+                <br>
+                죽녹원 입구에서 돌계단을 하나씩 하나씩 밟고 오르며 굳어 있던 몸을 풀고 나면 대나무 사이로 불어오는 대바람이 일상에 지쳐 있는 심신에 청량감을 불어 넣어준다. 또한, 댓잎의 사각거리는 소리를 듣노라면 어느 순간 빽빽이 들어서 있는 대나무 한가운데에 서 있는 자신이 보이고 푸른 댓잎을 통과해 쏟아지는 햇살의 기운을 몸으로 받아내는 기분 또한 신선하다. 죽녹원 안에는 대나무 잎에서 떨어지는 이슬을 먹고 자란다는 죽로차(竹露茶)가 자생하고 있다.
+                <br>
+                <br>
+                죽로차 한 잔으로 목을 적시고 죽림욕을 즐기며 하늘을 찌를 듯이 솟아오른 대나무를 올려다보자. 사람을 차분하게 만드는 매력 또한 가지고 있는 대나무와 댓잎이 풍기는 향기를 느낄 수 있을 것이다.
+              </p>
+
+            </div>
+            <div class="course_con" id="course_2">
+              연령별2221
+            </div>
+            <div class="course_con" id="course_3">
+              연령별33
+            </div>
+            <div class="course_con" id="course_4">
+              연령별144
+            </div>
+            <div class="course_con" id="course_5">
+              55
+            </div>
+
           </div>
 
           <div class="prod_list01" id="list01_4">
             <img src="../doc/rew_title.png" alt="리뷰">
             <ul class="review">
               <li>
-                <img src="../doc/죽녹원_겨울.jpg" alt="리뷰이미지">
+                <p class="input_img">
+                  <img src="../" alt="">
+                  <input type="file" name="이미지업로드" id="">
+                </p>
                 <p class="input_wrap">
                   <input type="text" placeholder="제목을 입력해주세요" class="rev_title">
                   <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"class="rev_sub"></textarea>
@@ -459,7 +575,19 @@
                   <button class="review_save">저장</button>
                   <button class="review_del">삭제</button>
                 </p>
-
+              </li>
+              <li>
+                <p class="input_img">
+                  <img src="../doc/죽녹원_겨울.jpg" alt="">
+                  
+                </p>
+                <p class="input_wrap">
+                  <span>제목입니다.</span>
+                  <span>이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다.이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다</span>
+                </p>
+                <p class="button_wrap">
+                  <button class="review_del">삭제</button>
+                </p>
               </li>
             </ul>
           </div>
@@ -469,6 +597,7 @@
       <div id="footer">
       </div>
     </div>
+    
   </body>
 </html>
 

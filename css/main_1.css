@@ -398,7 +398,7 @@ h1:hover {
   width: 357px;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 90px;
+  height: 88px;
   color: #666;
   letter-spacing: -1px;
 }
@@ -615,7 +615,7 @@ h1:hover {
 .soga_title span:nth-child(2) {
   padding: 10px;
   display: inline-block;
-  height: 162px;
+  height: 160px;
   display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
@@ -674,6 +674,10 @@ h1:hover {
   position: relative;
 }
 
+.review li {
+  height: 250px;
+}
+
 .review li > img {
   width: 320px;
   border: 1px solid #0c5c00;
@@ -683,6 +687,22 @@ h1:hover {
   display: inline-block;
   position: absolute;
   margin-left: 14px;
+}
+
+.input_wrap span:nth-child(1) {
+  font-size: 20px;
+  color: #0c5c00;
+  font-weight: bold;
+  display: block;
+}
+
+.input_wrap span:nth-child(2) {
+  font-size: 17px;
+  color: #000;
+  height: 165px;display: inline-block;
+  letter-spacing: -1px;;
+  margin-top: 10px;
+  overflow: scroll;
 }
 
 .review .rev_title {
@@ -707,9 +727,25 @@ h1:hover {
 
 .button_wrap {
   text-align: right;
-  margin-top: 10px;
 }
 
+.input_img {
+  display: inline-block;
+  position: relative;
+}
+
+.input_img > img {
+  border: 1px solid ;
+  width: 300px;
+  display: inline-block;
+  height: 200px;
+}
+
+.input_img > input {
+  position: absolute;
+  bottom: 47%;
+  left: 62px;
+}
 .button_wrap .review_save {
   width: 80px;
   padding: 7px 0px;
@@ -732,3 +768,49 @@ h1:hover {
   font-weight: bold;
 }
 
+
+/* 추천코스 스타일 */
+
+.course_tab {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.course_tab li {
+  font-size: 20px;
+  font-weight: bold;
+  color: #9c9c9c;
+  padding-right: 20px;
+}
+
+.course_tab li.active a {
+  color: #000;
+}
+
+.course_tab li a{
+  color: #9c9c9c;
+}
+
+.course_img {
+  display: flex;
+  justify-content: space-between;
+}
+
+.course_img li > img {
+  width: 550px;
+  height: 350px;
+}
+
+.course_title {
+  font-size: 20px;
+  color: #0c5c00;
+  padding: 15px 0px;
+  font-weight: bold;
+}
+
+.course_sub {
+  letter-spacing: -1px;
+  color: #666;
+  background-color: rgb(248 248 248);
+  padding: 17px;
+}
