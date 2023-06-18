@@ -103,7 +103,7 @@
             let result =
               "현재온도 : " +
               Math.floor(json.main.temp) +
-              "ºC<br>"; //소수점 버림 온도를 찍어줌
+              "°C<br>"; //소수점 버림 온도를 찍어줌
               // "습도 : " +
               // json.main.humidity +
               // "%<br>" + //습도를 찍어줌
@@ -140,11 +140,36 @@
 
         <div class="menu-box">
             <ul class="prod_tab">
-                <li class="active"><a href="#">소개</a></li>
-                <li><a href="#">소식</a></li>
-                <li><a href="#">코스추천</a></li>
-                <li><a href="#">리뷰</a></li>
+                <li class="active"><a href="#">소개</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 1</a></li>
+                    <li><a href="#">서브 메뉴 2</a></li>
+                    <li><a href="#">서브 메뉴 3</a></li>
+                  </ul>  
+                </li>
+                <li><a href="#">소식</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 4</a></li>
+                    <li><a href="#">서브 메뉴 5</a></li>
+                    <li><a href="#">서브 메뉴 6</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">코스추천</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 7</a></li>
+                    <li><a href="#">서브 메뉴 8</a></li>
+                    <li><a href="#">서브 메뉴 9</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">리뷰</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 10</a></li>
+                    <li><a href="#">서브 메뉴 11</a></li>
+                    <li><a href="#">서브 메뉴 12</a></li>
+                  </ul>
+                </li>
             </ul>
+
             <div class="search-box">
               <input type="text" placeholder="검색어를 입력해주세요">
               <button type="button" class="btn_search">
@@ -152,6 +177,7 @@
               </button>
             </div>
         </div>
+
       </div>
       <div class="container">
         <div class="prod_wrap">
@@ -197,7 +223,6 @@
                     </div>
                     <div class="card">
                       <p class="nowtime"></p>
-                      <!-- <br /> -->
                       <h2>담양군</h2>
                       <img id="ic" src="" />
                       <br />
@@ -205,8 +230,11 @@
                     </div>
 
                     <div class="blog" onclick ="window.open('https://blog.naver.com/damyanggun')">
+                      <p class="blog_top">담양군 공식 블로그</p>
+                      <div class="blog_title">
                       <img src="../doc/블로그1.png" alt="블로그이미지" width=40px height="40px">
                       <p>대숲맑은담양</p>
+                    </div>
                     </div>
                     <div class="damyang_web" onclick ="window.open('https://www.damyang.go.kr/tour/index.damyang')">
                       <img src="../doc/심볼.jpg" alt="담양군이미지" width="40px" height="40px">
@@ -316,7 +344,8 @@
 
           <!-- 탭박스 -->
           <div class="prod_list01 active" id="list01_1">
-            <p class="sogae">담양군 소개</p>
+            <img src="../doc/sogae_title.png" alt="">
+            <!-- <p class="sogae">담양군 소개</p> -->
             <ul class="sogae_info">
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
@@ -353,33 +382,89 @@
                   <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
               </li>
-              
-
-
-
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
             </ul>
 
 
           </div>
           <div class="prod_list01" id="list01_2">
-            22
+            <img src="../doc/sosik_title.png" alt="담양군 소식" style="margin-bottom: 10px;">
+            <ul class="sosik_info">
+                <li>
+                  <a href="#">
+                    <p class="sosik_tit">
+                      <!-- 공지면 .notice 일반게시글이면 .common -->
+                      <span class="notice">공지</span>
+                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
+                    <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <p class="sosik_tit">
+                      <span class="common">1234</span>
+                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
+                    <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <p class="sosik_tit">
+                      <span class="common">2134</span>
+                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
+                    <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <p class="sosik_tit">
+                      <span class="common">124</span>
+                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
+                    <p class="sosik_sub">수강생모집진짜이거엄청어렵게도시안짜놨네이거혼자만들면은죽음이었음진짜이거상줘야댄다..ㅋㅋ나 아니었으면이거 만들지도 못했어 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <p class="sosik_tit">
+                      <span class="common">45546</span>
+                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
+                    <p class="sosik_sub">수강생모집진짜이거엄청어렵게도시안짜놨네이거혼자만들면은죽음이었음진짜이거상줘야댄다..ㅋㅋ나 아니었으면이거 만들지도 못했어 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
+                  </a>
+                </li>
+            </ul>
+           
           </div>
 
           <div class="prod_list01" id="list01_3">
-            33
+            <img src="../doc/cource_title.png" alt="추천 코스">
           </div>
 
           <div class="prod_list01" id="list01_4">
-            44
+            <img src="../doc/rew_title.png" alt="리뷰">
+            <ul class="review">
+              <li>
+                <img src="../doc/죽녹원_겨울.jpg" alt="리뷰이미지">
+                <p class="input_wrap">
+                  <input type="text" placeholder="제목을 입력해주세요" class="rev_title">
+                  <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"class="rev_sub"></textarea>
+                  <!-- <input type="textarea" placeholder="내용을 입력해주세요"  class="rev_sub"> -->
+                </p>
+                <p class="button_wrap">
+                  <button class="review_save">저장</button>
+                  <button class="review_del">삭제</button>
+                </p>
+
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- <div class="main-box">
-        </div> -->
-        <!-- <div class="event">
-          <p>이달의 행사</p>
-          <div class="event-box"></div>
-        </div> -->
       </div>
       <div id="footer">
       </div>
