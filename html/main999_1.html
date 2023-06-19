@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인화면</title>
+    <link rel="stylesheet" href="../css/main_1.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          $(function () {
+           $('.prod_tab > li:first-child').removeClass('active');
+           $('#list01_1').removeClass('active');
+
+           $('.prod_tab > li > a').on('click', function (e) {
+             let tabNum = $(this).parent('li').index() + 1;
+             $('.prod_tab > li, #list01_1, .prod_list01').removeClass('active');
+             $(this).parent('li').addClass('active');
+             $('#list01_' + tabNum).addClass('active');
+             return false;
+           });
+        });
+      });
+
+
+        $(document).ready(function () {
+        $(".prod_tab > li > a").on("click", function (e) {
+          e.preventDefault();
+          let tabNum = $(this).parent("li").index() + 1;
+          $(".prod_tab > li, .prod_list01").removeClass("active");
+          $(this).parent("li").addClass("active");
+          $("#list01_" + tabNum).addClass("active");
+
+          // 숨기고 싶은 클래스를 추가하면 됩니다.
+          $(".dam_main").hide();
+        });
+      });
+
+      $(document).ready(function () {
+          $(function () {
+
+           $('.main_tab > li:first-child').addClass('active');
+           $('#main_pro01').addClass('active');
+
+           $('.main_tab > li > a').on('click', function (e) {
+             let tabNum = $(this).parent('li').index() + 1;
+             $('.main_tab > li, #main_pro01, .main_tab_pro').removeClass('active');
+             $(this).parent('li').addClass('active');
+             $('#main_pro0' + tabNum).addClass('active');
+             return false;
+           });
+        });
+      });
+
+// 추천코스이벤트
+      $(document).ready(function () {
+          $(function () {
+           $('.course_tab > li:first-child').addClass('active');
+           $('#course_1').addClass('active');
+
+           $('.course_tab > li > a').on('click', function (e) {
+             let tabNum = $(this).parent('li').index() + 1;
+             $('.course_tab > li, #course_1, .course_con').removeClass('active');
+             $(this).parent('li').addClass('active');
+             $('#course_' + tabNum).addClass('active');
+             return false;
+           });
+        });
+      });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+          function convertTime() {
+            var now = new Date();
+
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var date = now.getDate();
+
+            return year + " 년 " + month + " 월 " + date + " 일 ";
+          }
+
+          var currentTime = convertTime();
+          $(".nowtime").append(currentTime);
+        });
+    </script>
+
+    <script>
+        let url =  "https://api.openweathermap.org/data/2.5/weather?q=damyang&appid=6cf9a99f768ce493e58c351ccf43588a&lang=kr&units=metric";
+
+        fetch(url)
+          .then((response) => {
+            return response.json();
+          })
+          .then((json) => {
+            console.log(json);
+
+            let result =
+              "현재온도 : " +
+              Math.floor(json.main.temp) +
+              "°C<br>"; //소수점 버림 온도를 찍어줌
+              // "습도 : " +
+              // json.main.humidity +
+              // "%<br>" + //습도를 찍어줌
+              // "바람 : " +
+              // json.wind.speed +
+              // "m/s<br>" + //풍속을 찍어줌
+              // "최고온도 : " +
+              // Math.floor(json.main.temp_max) +
+              // "ºC<br>";  //소수점 버림 온도를 찍어줌
+              // "최저온도 : " +
+              // Math.floor(json.main.temp_min) +
+              // "ºC"; //소수점 버림 온도를 찍어줌
+            let icon = json.weather[0].icon; //아이콘 받아옴
+            document.getElementById("humidity").innerHTML = result; //result를 humidity라는 id를 가진 span에 innerHTML로 표시
+            let iconurl = document.getElementById("ic"); //img id를 iconurl이라는 이름으로 받아옴
+            iconurl.src = "../img/icon/" + icon +".png"; //iconurl로 src를 설정해줌
+          });
+    </script>
+
+
+    <style>
+       .prod_wrap .prod_list01 {display: none;}
+       .prod_wrap .prod_list01.active {display: block;}
+
+       .main_tab_pro {display: none;}
+       .main_tab_pro.active {display: block;}
+
+       .course_con {display: none;}
+       .course_con.active {display: block;}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="header">
+        <h3 onclick="location.href='../html/main_1.html'">담양 HOT PLACE!</h2>
+        <h1 onclick="location.href='../html/main_1.html'">DAMPLES</h1>
+
+        <div class="menu-box">
+            <ul class="prod_tab">
+                <li class="active"><a href="#">소개</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 1</a></li>
+                    <li><a href="#">서브 메뉴 2</a></li>
+                    <li><a href="#">서브 메뉴 3</a></li>
+                  </ul>  
+                </li>
+                <li><a href="/info">소식</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">담양군 소식</a></li>
+                    <li><a href="../html/event.html">행사일정</a></li>
+                    <li><a href="#">서브 메뉴 6</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">코스추천</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 7</a></li>
+                    <li><a href="#">서브 메뉴 8</a></li>
+                    <li><a href="#">서브 메뉴 9</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">리뷰</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 10</a></li>
+                    <li><a href="#">서브 메뉴 11</a></li>
+                    <li><a href="#">서브 메뉴 12</a></li>
+                  </ul>
+                </li>
+            </ul>
+
+            <div class="search-box">
+              <input type="text" placeholder="검색어를 입력해주세요">
+              <button type="button" class="btn_search">
+                <img src="../doc/search.png" alt="검색">
+              </button>
+            </div>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="prod_wrap">
+
+          <!-- 탭박스 -->
+          <div class="prod_list01 active" id="list01_1" name="abc">
+            <img src="../doc/sogae_title.png" alt="">
+            <!-- <p class="sogae">담양군 소개</p> -->
+            <ul class="sogae_info">
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
+              <li>
+                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                <p class="soga_title">
+                  <span>용홍사 계곡</span>
+                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
+                </p>
+              </li>
+            </ul>
+
+
+          </div>
+          <div class="prod_list01" id="list01_2"></div>
+          <div class="prod_list01" id="list01_3"> </div>
+          <div class="prod_list01" id="list01_4"></div>
+        </div>
+
+      </div>
+      <div id="footer">
+      </div>
+    </div>
+    
+  </body>
+</html>
+
+
