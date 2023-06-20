@@ -4,37 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메인화면</title>
-    <link rel="stylesheet" href="../css/main_1.css">
+    <link rel="stylesheet" href="../css/main_001.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
-        $(document).ready(function () {
-          $(function () {
-           $('.head_menu_tab > li:first-child').removeClass('active');
-           $('#list01_1').removeClass('active');
+      //   $(document).ready(function () {
+      //     $(function () {
+      //      $('.head_menu_tab > li:first-child').removeClass('active');
+      //      $('#list01_1').removeClass('active');
 
-           $('.head_menu_tab > li > a').on('click', function (e) {
-             let tabNum = $(this).parent('li').index() + 1;
-             $('.head_menu_tab > li, #list01_1, .maib_tab_list01').removeClass('active');
-             $(this).parent('li').addClass('active');
-             $('#list01_' + tabNum).addClass('active');
-             return false;
-           });
-        });
-      });
+      //      $('.head_menu_tab > li > a').on('click', function (e) {
+      //        let tabNum = $(this).parent('li').index() + 1;
+      //        $('.head_menu_tab > li, #list01_1, .maib_tab_list01').removeClass('active');
+      //        $(this).parent('li').addClass('active');
+      //        $('#list01_' + tabNum).addClass('active');
+      //        return false;
+      //      });
+      //   });
+      // });
 
 
-        $(document).ready(function () {
-        $(".head_menu_tab > li > a").on("click", function (e) {
-          e.preventDefault();
-          let tabNum = $(this).parent("li").index() + 1;
-          $(".head_menu_tab > li, .maib_tab_list01").removeClass("active");
-          $(this).parent("li").addClass("active");
-          $("#list01_" + tabNum).addClass("active");
+      //   $(document).ready(function () {
+      //   $(".head_menu_tab > li > a").on("click", function (e) {
+      //     e.preventDefault();
+      //     let tabNum = $(this).parent("li").index() + 1;
+      //     $(".head_menu_tab > li, .maib_tab_list01").removeClass("active");
+      //     $(this).parent("li").addClass("active");
+      //     $("#list01_" + tabNum).addClass("active");
 
-          // 숨기고 싶은 클래스를 추가하면 됩니다.
-          $(".dam_main").hide();
-        });
-      });
+      //     // 숨기고 싶은 클래스를 추가하면 됩니다.
+      //     $(".dam_main").hide();
+      //   });
+      // });
 
       $(document).ready(function () {
           $(function () {
@@ -53,20 +53,20 @@
       });
 
 // 추천코스이벤트
-      $(document).ready(function () {
-          $(function () {
-           $('.course_tab > li:first-child').addClass('active');
-           $('#course_1').addClass('active');
+      // $(document).ready(function () {
+      //     $(function () {
+      //      $('.course_tab > li:first-child').addClass('active');
+      //      $('#course_1').addClass('active');
 
-           $('.course_tab > li > a').on('click', function (e) {
-             let tabNum = $(this).parent('li').index() + 1;
-             $('.course_tab > li, #course_1, .course_cont').removeClass('active');
-             $(this).parent('li').addClass('active');
-             $('#course_' + tabNum).addClass('active');
-             return false;
-           });
-        });
-      });
+      //      $('.course_tab > li > a').on('click', function (e) {
+      //        let tabNum = $(this).parent('li').index() + 1;
+      //        $('.course_tab > li, #course_1, .course_cont').removeClass('active');
+      //        $(this).parent('li').addClass('active');
+      //        $('#course_' + tabNum).addClass('active');
+      //        return false;
+      //      });
+      //   });
+      // });
 
     </script>
     <script>
@@ -100,18 +100,6 @@
               "현재온도 : " +
               Math.floor(json.main.temp) +
               "°C<br>"; //소수점 버림 온도를 찍어줌
-              // "습도 : " +
-              // json.main.humidity +
-              // "%<br>" + //습도를 찍어줌
-              // "바람 : " +
-              // json.wind.speed +
-              // "m/s<br>" + //풍속을 찍어줌
-              // "최고온도 : " +
-              // Math.floor(json.main.temp_max) +
-              // "ºC<br>";  //소수점 버림 온도를 찍어줌
-              // "최저온도 : " +
-              // Math.floor(json.main.temp_min) +
-              // "ºC"; //소수점 버림 온도를 찍어줌
             let icon = json.weather[0].icon; //아이콘 받아옴
             document.getElementById("humidity").innerHTML = result; //result를 humidity라는 id를 가진 span에 innerHTML로 표시
             let iconurl = document.getElementById("ic"); //img id를 iconurl이라는 이름으로 받아옴
@@ -126,47 +114,46 @@
        .main_tab_menu {display: none;}
        .main_tab_menu.active {display: block;}
 
-       .course_cont {display: none;}
-       .course_cont.active {display: block;}
+       /* .course_cont {display: none;}
+       .course_cont.active {display: block;} */
 
 
     </style>
   </head>
   <body>
     <div id="wrapper">
+
       <div class="header">
-        <h3 onclick="location.href='../html/main_1.html'">담양 HOT PLACE!</h2>
-        <h1 onclick="location.href='../html/main_1.html'">DAMPLES</h1>
+        <h3 onclick="location.href='../html/main_001.html'">담양 HOT PLACE!</h2>
+        <h1 onclick="location.href='../html/main_001.html'">DAMPLES</h1>
 
         <div class="head_menu">
             <ul class="head_menu_tab">
-                <li class="active"><a href="#">소개</a>
+                <li class="active"><a href="../html/sogae_001.html">소개</a>
                   <ul class="head_drop">
-                    <li><a href="#">담양군 소개</a></li>
-                    <li><a href="#">주요 관광지</a></li>
-                    <li><a href="#">서브 메뉴 3</a></li>
+                    <li><a href="../html/sogae_001.html">담양군 소개</a></li>
+                    <li><a href="../html/sogae_002.html">주요 관광지</a></li>
                   </ul>  
                 </li>
-                <li><a href="#">소식</a>
+                <li><a href="../html/sosik_001.html">소식</a>
                   <ul class="head_drop">
-                    <li><a href="#">담양군 소식</a></li>
+                    <li><a href="../html/sosik_001.html">담양군 소식</a></li>
                     <li><a href="../html/event.html">행사일정</a></li>
-                    <li><a href="#">서브 메뉴 6</a></li>
                   </ul>
                 </li>
-                <li><a href="#">코스추천</a>
-                  <ul class="head_drop">
+                <li><a href="../html/course_001.html">코스추천</a>
+                  <!-- <ul class="head_drop">
                     <li><a href="#">서브 메뉴 7</a></li>
                     <li><a href="#">서브 메뉴 8</a></li>
                     <li><a href="#">서브 메뉴 9</a></li>
-                  </ul>
+                  </ul> -->
                 </li>
-                <li><a href="#">리뷰</a>
-                  <ul class="head_drop">
+                <li><a href="../html/review_001.html">리뷰</a>
+                  <!-- <ul class="head_drop">
                     <li><a href="#">서브 메뉴 10</a></li>
                     <li><a href="#">서브 메뉴 11</a></li>
                     <li><a href="#">서브 메뉴 12</a></li>
-                  </ul>
+                  </ul> -->
                 </li>
             </ul>
 
@@ -180,8 +167,8 @@
 
       </div>
       <div class="container">
-        <div class="main_wrap">
 
+        <div class="main_wrap">
           <!-- 담플스메인 -->
           <div class="dam_main">
             
@@ -192,20 +179,22 @@
             </ul>
             
             <div class="main_tab_menu active" id="main_menu01">
+
               <div class="main_tab_cont">
+
                 <div class="main_cont_top">
                    <img src="../doc/지도4.png" alt="지도이미지">
                 </div>
 
                 <div class="main_cont_bottom">
-                  <img src="../doc/hotplace_tit.png" alt="HOT PLACE">
+                  <img src="../doc/hotplace_tit.png" alt="HOT PLACE" onclick="location.href='../html/sogae_001.html'">
                   <img src="../doc/main_event_sub_01.png" alt="유적지">
                   <ul class="hot_place_info">
                     <li>
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
                       <p class="hot_place_title">
                         <span class="hp_title" >죽녹원</span>
-                        <!-- <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span> -->
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
                       </p>
   
                     </li>
@@ -213,14 +202,14 @@
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
                       <p class="hot_place_title">
                         <span class="hp_title">죽녹원</span>
-                        <!-- <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span> -->
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
                       </p>
                     </li>
                     <li>
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
                       <p class="hot_place_title">
                         <span class="hp_title">죽녹원</span>
-                        <!-- <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span> -->
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
                       </p>
                     </li>
                   </ul>
@@ -258,7 +247,7 @@
                    <img src="../doc/지도4.png" alt="지도이미지">
                 </div>
                 <div class="main_cont_bottom">
-                  <img src="../doc/mukbang_tit.png" alt="mukbang">
+                  <img src="../doc/mukbang_tit.png" alt="mukbang" onclick="location.href='../html/sogae_001.html/#c2'">
                   <img src="../doc/main_event_sub_03.png" alt="맛집">
                   <ul class="hot_place_info">
                     <li>
@@ -312,19 +301,16 @@
 
             <div class="main_tab_menu" id="main_menu03">
               <div class="main_tab_cont">
-                
                 <div class="main_cont_top">
                    <img src="../doc/지도4.png" alt="지도이미지">
-
                 </div>
-
                 <div class="main_cont_bottom">
                   <img src="../doc/lodgment_tit.png" alt="숙박">
                   <img src="../doc/main_event_sub_06.png" alt="캠핑">
                   <ul class="hot_place_info">
                     <li>
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
+                      <p class="hot_place_title" href="">
                         <span class="hp_title">죽녹원</span>
                         <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
                       </p>
@@ -420,7 +406,6 @@
                 </div>
               </div>
             </div>
-
             <div class="main_event">
               <img src="../doc/main_event.png" alt="이달의 행사">
               <ul class="event_info">
@@ -464,188 +449,8 @@
                 <p>담양군 문화관광</p>
               </div>
             </div>
-
-          </div>
-
-
-          <!-- 탭박스 -->
-          <div class="maib_tab_list01 active" id="list01_1">
-            <img src="../doc/sogae_title.png" alt="">
-            <!-- <p class="sogae">담양군 소개</p> -->
-            <ul class="sogae_info">
-              <li>
-                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
-                  <span>용홍사 계곡</span>
-                  <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                </p>
-              </li>
-              <li>
-                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
-                  <span>용홍사 계곡</span>
-                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                </p>
-              </li>
-              <li>
-                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
-                  <span>용홍사 계곡</span>
-                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                </p>
-              </li>
-              <li>
-                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
-                  <span>용홍사 계곡</span>
-                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                </p>
-              </li>
-              <li>
-                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
-                  <span>용홍사 계곡</span>
-                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                </p>
-              </li>
-              <li>
-                <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
-                  <span>용홍사 계곡</span>
-                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                </p>
-              </li>
-            </ul>
-
-
-          </div>
-          <div class="maib_tab_list01" id="list01_2">
-            <img src="../doc/sosik_title.png" alt="담양군 소식" style="margin-bottom: 10px;">
-            <ul class="sosik_info">
-                <li>
-                  <a href="#">
-                    <p class="sosik_title">
-                      <!-- 공지면 .notice 일반게시글이면 .common -->
-                      <span class="notice">공지</span>
-                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <p class="sosik_title">
-                      <span class="common">1234</span>
-                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <p class="sosik_title">
-                      <span class="common">2134</span>
-                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <p class="sosik_title">
-                      <span class="common">124</span>
-                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <p class="sosik_title">
-                      <span class="common">45546</span>
-                      2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
-                    <p class="sosik_sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
-                  </a>
-                </li>
-            </ul>
-           
-          </div>
-
-          <div class="main_tab_list01" id="list01_3">
-            <img src="../doc/cource_title.png" alt="추천 코스">
-
-            <ul class="course_tab">
-              <li class="active"><a href="#">연령별</a></li>
-              <li><a href="#">반려동물동반</a></li>
-              <li><a href="#">키즈프렌드리</a></li>
-              <li><a href="#">무장애관광</a></li>
-              <li><a href="#">누구화함께</a></li>
-            </ul>
-
-            <div class="course_cont active" id="course_1">
-              <ul class="course_img">
-                <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
-                <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
-              </ul>
-
-              <h3 class="course_title">보이는 끝까지 찾아다녀도 목숨이 있는</h3>
-              <p class="course_sub">
-                담양군에서 조성한 담양읍 향교리의 죽녹원이 죽림욕장으로 인기다. 관방제림과 영산강의 시원인 담양천을 끼는 향교를 지나면 바로 왼편에 보이는 대숲이 죽녹원이다
-                <br>
-                <br>
-                죽녹원 입구에서 돌계단을 하나씩 하나씩 밟고 오르며 굳어 있던 몸을 풀고 나면 대나무 사이로 불어오는 대바람이 일상에 지쳐 있는 심신에 청량감을 불어 넣어준다. 또한, 댓잎의 사각거리는 소리를 듣노라면 어느 순간 빽빽이 들어서 있는 대나무 한가운데에 서 있는 자신이 보이고 푸른 댓잎을 통과해 쏟아지는 햇살의 기운을 몸으로 받아내는 기분 또한 신선하다. 죽녹원 안에는 대나무 잎에서 떨어지는 이슬을 먹고 자란다는 죽로차(竹露茶)가 자생하고 있다.
-                <br>
-                <br>
-                죽로차 한 잔으로 목을 적시고 죽림욕을 즐기며 하늘을 찌를 듯이 솟아오른 대나무를 올려다보자. 사람을 차분하게 만드는 매력 또한 가지고 있는 대나무와 댓잎이 풍기는 향기를 느낄 수 있을 것이다.
-              </p>
-
-            </div>
-            <div class="course_cont" id="course_2">
-              연령별2221
-            </div>
-            <div class="course_cont" id="course_3">
-              연령별33
-            </div>
-            <div class="course_cont" id="course_4">
-              연령별144
-            </div>
-            <div class="course_cont" id="course_5">
-              55
-            </div>
-
-          </div>
-
-          <div class="maib_tab_list01" id="list01_4">
-            <img src="../doc/rew_title.png" alt="리뷰">
-            <ul class="review">
-              <li>
-                <p class="input_img">
-                  <img src="../" alt="">
-                  <input type="file" name="이미지업로드" id="">
-                </p>
-                <p class="input_wrap">
-                  <input type="text" placeholder="제목을 입력해주세요" class="rev_title">
-                  <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"class="rev_sub"></textarea>
-                  <!-- <input type="textarea" placeholder="내용을 입력해주세요"  class="rev_sub"> -->
-                </p>
-                <p class="button_wrap">
-                  <button class="review_save">저장</button>
-                  <button class="review_del">삭제</button>
-                </p>
-              </li>
-              <li>
-                <p class="input_img">
-                  <img src="../doc/죽녹원_겨울.jpg" alt="">
-                  
-                </p>
-                <p class="input_wrap">
-                  <span>제목입니다.</span>
-                  <span>이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다.이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다</span>
-                </p>
-                <p class="button_wrap">
-                  <button class="review_del">삭제</button>
-                </p>
-              </li>
-            </ul>
           </div>
         </div>
-
       </div>
       <div id="footer">
       </div>

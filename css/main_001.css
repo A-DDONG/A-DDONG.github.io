@@ -65,6 +65,9 @@ body {
 /* background-color: #1d9042; 
 }
   */
+img:hover {
+  cursor: pointer;
+}
 
 #wrapper {
   width: 100%;
@@ -101,7 +104,7 @@ h1:hover {
   cursor: pointer;
 }
 
-.menu-box {
+.head_menu {
   padding: 5px;
   font-family: "SBAggroM";
   font-weight: bold;
@@ -109,7 +112,7 @@ h1:hover {
   display: flex;
 }
 
-.menu-box ul {
+.head_menu ul {
   list-style: none;
   display: flex;
   width: 1200px;
@@ -118,7 +121,7 @@ h1:hover {
   font-size: 30px;
 }
 
-.menu-box li > a {
+.head_menu li > a {
   color: #fff;
   width: 168px;
   padding-top: 4px;
@@ -127,21 +130,21 @@ h1:hover {
   display: inline-block;
 }
 
-.menu-box ul a:hover {
+.head_menu ul a:hover {
   background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: black;
 }
 
-.menu-box ul li {
+.head_menu ul li {
   position: relative;
 }
-.menu-box ul li:hover .dropdown-menu {
+.head_menu ul li:hover .head_drop {
   display: block;
   color: #000;
 }
-.menu-box ul li .dropdown-menu {
+.head_menu ul li .head_drop {
   position: absolute;
   top: 67px;
   left: 0;
@@ -152,27 +155,27 @@ h1:hover {
   border: 2px solid #1d9042;
 
 }
-.menu-box ul li .dropdown-menu li {
+.head_menu ul li .head_drop li {
   background-color: #E0EFDC;
 }
-.menu-box ul li .dropdown-menu li a {
+.head_menu ul li .head_drop li a {
   color: #000;
 }
-.menu-box ul li .dropdown-menu li a:hover {
+.head_menu ul li .head_drop li a:hover {
   background: #FF9D78;
   color: #000;
 }
-.prod_tab li.active {
+.head_menu_tab li.active {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
-.prod_tab li.active > a {
-  color: #000;
+.head_menu_tab li.active > a {
+  /* color: #000; */
 }
 
-.search-box > input {
+.search_box > input {
   padding: 10px 55px 10px 20px;
   height: 60px;
   font-size: 18px;
@@ -182,16 +185,16 @@ h1:hover {
   border-radius: 10px;
 }
 
-.search-box {
+.search_box {
   position: relative;
   margin-right: 10px;
 }
 
-.search-box > input::placeholder {
+.search_box > input::placeholder {
   color: #fff;
 }
 
-.search-box .btn_search {
+.search_box .btn_search {
   position: absolute;
   top: 7px;
   right: 10px;
@@ -202,7 +205,7 @@ h1:hover {
   cursor: pointer;
 }
 
-.search-box .btn_search > img {
+.search_box .btn_search > img {
   border: 0;
 }
 
@@ -297,7 +300,7 @@ h1:hover {
 }
 
 /* 한비가추가 */
-.prod_wrap {
+.main_wrap {
   background-color: #fff;
   border-radius: 10px;
   transform: translateY(-18px);
@@ -579,7 +582,7 @@ h1:hover {
 }
 
 /* 소개 */
-.prod_list01.active > p.sogae {
+.maib_tab_list01.active > p.sogae {
   font-size: 40px;
   font-family: "LINESeedKR-Bd";
 }
@@ -600,12 +603,12 @@ h1:hover {
   border: 1px solid #666;
 }
 
-.soga_title {
+.sogae_title {
   width: 250px;
   display: inline-block;
 }
 
-.soga_title span:nth-child(1) {
+.sogae_title span:nth-child(1) {
   font-size: 23px;
   display: block;
   color: #0c5c00;
@@ -613,7 +616,7 @@ h1:hover {
   padding-left: 10px;
 }
 
-.soga_title span:nth-child(2) {
+.sogae_title span:nth-child(2) {
   padding: 10px;
   display: inline-block;
   height: 160px;
@@ -639,7 +642,7 @@ h1:hover {
   border-bottom: none;
 }
 
-.sosik_info .sosik_tit {
+.sosik_info .sosik_title {
   font-size: 22px;
   font-weight: bold;
   color: #000;
