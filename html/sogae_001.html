@@ -106,86 +106,7 @@
             iconurl.src = "../img/icon/" + icon +".png"; //iconurl로 src를 설정해줌
           });
     </script>
-    <!-- <script>
-          window.addEventListener('DOMContentLoaded', function() {
-            // URL의 해시 부분을 가져옵니다.
-            var hash = window.location.hash;
-          
-            // 해시가 존재하고, 이름이 'mukbang'인 경우에만 해당 탭을 활성화합니다.
-            if (hash === '#course_2') {
-              // 모든 탭 요소를 비활성화합니다.
-              var tabs = document.querySelectorAll('.course_cont');
-              for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-              }
-          
-              // 'mukbang' 탭을 활성화합니다.
-              var mukbangTab = document.getElementById('course_2');
-              mukbangTab.classList.add('active');
-              
-            } else if(hash === '#course_3') {
-                            // 모든 탭 요소를 비활성화합니다.
-                            var tabs = document.querySelectorAll('.course_cont');
-              for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-              }
-          
-              // 'mukbang' 탭을 활성화합니다.
-              var mukbangTab = document.getElementById('course_3');
-              mukbangTab.classList.add('active');
-              
-            }
-            
-          });
-    </script> -->
-    <script>
-        // 페이지가 로드되었을 때 실행되는 코드
-        window.onload = function() {
-          // URL의 해시 값을 가져옴
-          var hash = window.location.hash;
-          
-          // 해시 값에 따라 해당 탭을 활성화시킴
-          var tabNumber = getTabNumber(hash);
-          if (tabNumber) {
-            activateTab(tabNumber);
-          } else {
-            activateTab(1);
-          }
-        }
 
-        // 탭을 활성화하는 함수
-        function activateTab(tabNumber) {
-          // 모든 탭 메뉴 요소와 탭 내용 요소를 가져옴
-          var tabMenuItems = document.querySelectorAll('.course_tab li');
-          var tabContents = document.querySelectorAll('.course_cont');
-          
-          // 모든 탭 메뉴 요소의 클래스를 제거하고 선택된 탭 메뉴에 클래스를 추가함
-          for (var i = 0; i < tabMenuItems.length; i++) {
-            tabMenuItems[i].classList.remove('active');
-          }
-          tabMenuItems[tabNumber - 1].classList.add('active');
-          
-          // 모든 탭 내용 요소의 클래스를 제거하고 선택된 탭 내용에 클래스를 추가함
-          for (var j = 0; j < tabContents.length; j++) {
-            tabContents[j].classList.remove('active');
-          }
-          tabContents[tabNumber - 1].classList.add('active');
-        }
-
-        // 해시 값을 통해 탭 번호를 가져오는 함수
-        function getTabNumber(hash) {
-          // 해시 값이 비어있거나 #course_ 로 시작하지 않으면 null 반환
-          if (!hash || !hash.startsWith('#course_')) {
-            return null;
-          }
-          
-          // #course_ 다음에 오는 숫자를 추출하여 반환
-          var tabNumber = hash.slice(8);
-          return parseInt(tabNumber);
-        }
-
-    </script>
-      
     <style>
        .main_wrap .maib_tab_list01 {display: none;}
        .main_wrap .maib_tab_list01.active {display: block;}
@@ -207,34 +128,34 @@
         <h1 onclick="location.href='../html/main_001.html'">DAMPLES</h1>
 
         <div class="head_menu">
-            <ul class="head_menu_tab">
-                <li class="active"><a href="../html/sogae_001.html">소개</a>
-                  <ul class="head_drop">
-                    <li><a href="../html/sogae_001.html">담양군 소개</a></li>
-                    <li><a href="../html/sogae_002.html">주요 관광지</a></li>
-                  </ul>  
-                </li>
-                <li><a href="../html/sosik_001.html">소식</a>
-                  <ul class="head_drop">
-                    <li><a href="../html/sosik_001.html">담양군 소식</a></li>
-                    <li><a href="../html/event.html">행사일정</a></li>
-                  </ul>
-                </li>
-                <li><a href="../html/course_001.html">코스추천</a>
-                  <!-- <ul class="head_drop">
-                    <li><a href="#">서브 메뉴 7</a></li>
-                    <li><a href="#">서브 메뉴 8</a></li>
-                    <li><a href="#">서브 메뉴 9</a></li>
-                  </ul> -->
-                </li>
-                <li><a href="../html/review_001.html">리뷰</a>
-                  <!-- <ul class="head_drop">
-                    <li><a href="#">서브 메뉴 10</a></li>
-                    <li><a href="#">서브 메뉴 11</a></li>
-                    <li><a href="#">서브 메뉴 12</a></li>
-                  </ul> -->
-                </li>
-            </ul>
+          <ul class="head_menu_tab">
+              <li class="active"><a href="../html/sogae_001.html">소개</a>
+                <ul class="head_drop">
+                  <li><a href="../html/sogae_001.html">담양군 소개</a></li>
+                  <li><a href="../html/sogae_002.html">주요 관광지</a></li>
+                </ul>  
+              </li>
+              <li><a href="../html/sosik_001.html">소식</a>
+                <ul class="head_drop">
+                  <li><a href="../html/sosik_001.html">담양군 소식</a></li>
+                  <li><a href="../html/event.html">행사일정</a></li>
+                </ul>
+              </li>
+              <li><a href="../html/course_001.html">코스추천</a>
+                <!-- <ul class="head_drop">
+                  <li><a href="#">서브 메뉴 7</a></li>
+                  <li><a href="#">서브 메뉴 8</a></li>
+                  <li><a href="#">서브 메뉴 9</a></li>
+                </ul> -->
+              </li>
+              <li><a href="../html/review_001.html">리뷰</a>
+                <!-- <ul class="head_drop">
+                  <li><a href="#">서브 메뉴 10</a></li>
+                  <li><a href="#">서브 메뉴 11</a></li>
+                  <li><a href="#">서브 메뉴 12</a></li>
+                </ul> -->
+              </li>
+          </ul>
 
             <div class="search_box">
               <input type="text" placeholder="검색어를 입력해주세요">
@@ -248,159 +169,41 @@
       <div class="container">
 
         <div class="main_wrap">
-          <div class="sogae_main">
-            <div class="main_tab_list01" id="list01_3">
-              <img src="../doc/cource_title.png" alt="추천 코스">
-  
-              <ul class="course_tab">
-                <li class="active"><a href="#">핫플</a></li>
-                <li><a href="#">먹방</a></li>
-                <li><a href="#">숙박</a></li>
+          <div class="main_tab_list01" id="list01_3">
+            <img src="../doc/cource_title.png" alt="추천 코스">
+
+            <ul class="course_tab">
+              <li class="active"><a href="#">핫플</a></li>
+              <li><a href="#">먹방</a></li>
+              <li><a href="#">숙박</a></li>
+            </ul>
+
+            <div class="course_cont active" id="hp_1">
+              <ul class="course_img">
+                <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
+                <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
               </ul>
-  
-              <div class="course_cont active" id="course_1">
-                <ul class="sogae_info">
-                  <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>용홍사 계곡</span>
-                      <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>용홍사 계곡</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>용홍사 계곡</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>용홍사 계곡</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>용홍사 계곡</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>용홍사 계곡</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                </ul>
+
+              <h3 class="course_title">보이는 끝까지 찾아다녀도 목숨이 있는</h3>
+              <p class="course_sub">
+                담양군에서 조성한 담양읍 향교리의 죽녹원이 죽림욕장으로 인기다. 관방제림과 영산강의 시원인 담양천을 끼는 향교를 지나면 바로 왼편에 보이는 대숲이 죽녹원이다
+                <br>
+                <br>
+                죽녹원 입구에서 돌계단을 하나씩 하나씩 밟고 오르며 굳어 있던 몸을 풀고 나면 대나무 사이로 불어오는 대바람이 일상에 지쳐 있는 심신에 청량감을 불어 넣어준다. 또한, 댓잎의 사각거리는 소리를 듣노라면 어느 순간 빽빽이 들어서 있는 대나무 한가운데에 서 있는 자신이 보이고 푸른 댓잎을 통과해 쏟아지는 햇살의 기운을 몸으로 받아내는 기분 또한 신선하다. 죽녹원 안에는 대나무 잎에서 떨어지는 이슬을 먹고 자란다는 죽로차(竹露茶)가 자생하고 있다.
+                <br>
+                <br>
+                죽로차 한 잔으로 목을 적시고 죽림욕을 즐기며 하늘을 찌를 듯이 솟아오른 대나무를 올려다보자. 사람을 차분하게 만드는 매력 또한 가지고 있는 대나무와 댓잎이 풍기는 향기를 느낄 수 있을 것이다.
+              </p>
+
+            </div>
+            <div class="course_cont" id="course_2">
+              연령별2221
+            </div>
+            <div class="course_cont" id="course_3">
+              연령별33
+            </div>
 
 
-              </div>
-              <div class="course_cont" id="course_2" name="mukbang">
-                <ul class="sogae_info">
-                  <li>
-                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-
-                      <span>아우터</span>
-                      <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>프룩커피</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>원조대나무국수</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>뚝방국수</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>담양애꽃</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>담양대가</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-
-
-              <div class="course_cont" id="course_3">
-                <ul class="sogae_info">
-                  <li>
-                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>까망감스테이</span>
-                      <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>글리제977</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>담양을담다</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>당나귀숲</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>선인장호스텔</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                  <li>
-                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
-                    <p class="sogae_title">
-                      <span>호텔드몽드</span>
-                      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
           </div>
 
         </div>

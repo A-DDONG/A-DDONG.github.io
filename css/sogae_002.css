@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "LINESeedKR-Bd";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+      format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+.sogae_hot_title {
+    font-family: "LINESeedKR-Bd";
+    font-size: 40px;
+    color: #0c5c00;
+  }
