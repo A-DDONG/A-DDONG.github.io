@@ -106,6 +106,90 @@
             iconurl.src = "../img/icon/" + icon +".png"; //iconurl로 src를 설정해줌
           });
     </script>
+    <!-- <script>
+          window.addEventListener('DOMContentLoaded', function() {
+            // URL의 해시 부분을 가져옵니다.
+            var hash = window.location.hash;
+          
+            // 해시가 존재하고, 이름이 'mukbang'인 경우에만 해당 탭을 활성화합니다.
+            if (hash === '#course_2') {
+              // 모든 탭 요소를 비활성화합니다.
+              var tabs = document.querySelectorAll('.course_cont');
+              for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+              }
+          
+              // 'mukbang' 탭을 활성화합니다.
+              var mukbangTab = document.getElementById('course_2');
+              mukbangTab.classList.add('active');
+              
+            } else if(hash === '#course_3') {
+                            // 모든 탭 요소를 비활성화합니다.
+                            var tabs = document.querySelectorAll('.course_cont');
+              for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+              }
+          
+              // 'mukbang' 탭을 활성화합니다.
+              var mukbangTab = document.getElementById('course_3');
+              mukbangTab.classList.add('active');
+              
+            }
+            
+          });
+    </script> -->
+    <script>
+        // 페이지가 로드되었을 때 실행되는 코드
+        window.onload = function() {
+          // URL의 해시 값을 가져옴
+          var hash = window.location.hash;
+          
+          // 해시 값에 따라 해당 탭을 활성화시킴
+          var tabNumber = getTabNumber(hash);
+          if (tabNumber) {
+            activateTab(tabNumber);
+          } else {
+            activateTab(1);
+          }
+        }
+
+        // 탭을 활성화하는 함수
+        function activateTab(tabNumber) {
+          // 모든 탭 메뉴 요소와 탭 내용 요소를 가져옴
+          var tabMenuItems = document.querySelectorAll('.course_tab li');
+          var tabContents = document.querySelectorAll('.course_cont');
+          
+          // 모든 탭 메뉴 요소의 클래스를 제거하고 선택된 탭 메뉴에 클래스를 추가함
+          for (var i = 0; i < tabMenuItems.length; i++) {
+            tabMenuItems[i].classList.remove('active');
+          }
+          tabMenuItems[tabNumber - 1].classList.add('active');
+          
+          // 모든 탭 내용 요소의 클래스를 제거하고 선택된 탭 내용에 클래스를 추가함
+          for (var j = 0; j < tabContents.length; j++) {
+            tabContents[j].classList.remove('active');
+          }
+          tabContents[tabNumber - 1].classList.add('active');
+        }
+
+        // 해시 값을 통해 탭 번호를 가져오는 함수
+        function getTabNumber(hash) {
+          // 해시 값이 비어있거나 #course_ 로 시작하지 않으면 null 반환
+          if (!hash || !hash.startsWith('#course_')) {
+            return null;
+          }
+          
+          // #course_ 다음에 오는 숫자를 추출하여 반환
+          var tabNumber = hash.slice(8);
+          return parseInt(tabNumber);
+        }
+
+
+    </script>
+  
+          
+
+
 
     <style>
        .main_wrap .maib_tab_list01 {display: none;}
@@ -227,93 +311,96 @@
 
 
               </div>
-              <div class="course_cont" id="course_2" name="c2">
+              <div class="course_cont" id="course_2" name="mukbang">
                 <ul class="sogae_info">
                   <li>
-                    <img src="../doc/죽녹원_겨울.jpg" alt="죽녹원여름">
+                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+
+                      <span>아우터</span>
                       <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>프룩커피</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>원조대나무국수</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>뚝방국수</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>담양애꽃</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/담양애꽃_음식.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>담양대가</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                 </ul>
               </div>
+
+
               <div class="course_cont" id="course_3">
                 <ul class="sogae_info">
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>까망감스테이</span>
                       <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>글리제977</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>담양을담다</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>당나귀숲</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>선인장호스텔</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
                   <li>
-                    <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
+                    <img src="../doc/까망감스테이_내부.jpg" alt="죽녹원여름">
                     <p class="sogae_title">
-                      <span>용홍사 계곡</span>
+                      <span>호텔드몽드</span>
                       <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                     </p>
                   </li>
