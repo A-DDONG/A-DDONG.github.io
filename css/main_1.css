@@ -41,6 +41,7 @@
   font-style: normal;
 }
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -100,7 +101,7 @@ h1:hover {
   cursor: pointer;
 }
 
-.menu-box {
+.head_menu {
   padding: 5px;
   font-family: "SBAggroM";
   font-weight: bold;
@@ -108,7 +109,7 @@ h1:hover {
   display: flex;
 }
 
-.menu-box ul {
+.head_menu ul {
   list-style: none;
   display: flex;
   width: 1200px;
@@ -117,7 +118,7 @@ h1:hover {
   font-size: 30px;
 }
 
-.menu-box li > a {
+.head_menu li > a {
   color: #fff;
   width: 168px;
   padding-top: 4px;
@@ -126,21 +127,21 @@ h1:hover {
   display: inline-block;
 }
 
-.menu-box ul a:hover {
+.head_menu ul a:hover {
   background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: black;
 }
 
-.menu-box ul li {
+.head_menu ul li {
   position: relative;
 }
-.menu-box ul li:hover .dropdown-menu {
+.head_menu ul li:hover .head_drop {
   display: block;
   color: #000;
 }
-.menu-box ul li .dropdown-menu {
+.head_menu ul li .head_drop {
   position: absolute;
   top: 67px;
   left: 0;
@@ -149,28 +150,29 @@ h1:hover {
   display: none;
   color: black;
   border: 2px solid #1d9042;
+
 }
-.menu-box ul li .dropdown-menu li {
-  background-color: #e0efdc;
+.head_menu ul li .head_drop li {
+  background-color: #E0EFDC;
 }
-.menu-box ul li .dropdown-menu li a {
+.head_menu ul li .head_drop li a {
   color: #000;
 }
-.menu-box ul li .dropdown-menu li a:hover {
-  background: #ff9d78;
+.head_menu ul li .head_drop li a:hover {
+  background: #FF9D78;
   color: #000;
 }
-.prod_tab li.active {
+.head_menu_tab li.active {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #fff;
 }
 
-.prod_tab li.active > a {
+.head_menu_tab li.active > a {
   color: #000;
 }
 
-.search-box > input {
+.search_box > input {
   padding: 10px 55px 10px 20px;
   height: 60px;
   font-size: 18px;
@@ -180,16 +182,16 @@ h1:hover {
   border-radius: 10px;
 }
 
-.search-box {
+.search_box {
   position: relative;
   margin-right: 10px;
 }
 
-.search-box > input::placeholder {
+.search_box > input::placeholder {
   color: #fff;
 }
 
-.search-box .btn_search {
+.search_box .btn_search {
   position: absolute;
   top: 7px;
   right: 10px;
@@ -200,7 +202,7 @@ h1:hover {
   cursor: pointer;
 }
 
-.search-box .btn_search > img {
+.search_box .btn_search > img {
   border: 0;
 }
 
@@ -286,6 +288,7 @@ h1:hover {
   border: 5px solid black;
 } */
 
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -294,12 +297,13 @@ h1:hover {
 }
 
 /* 한비가추가 */
-.prod_wrap {
+.main_wrap {
   background-color: #fff;
   border-radius: 10px;
   transform: translateY(-18px);
   padding: 25px;
 }
+
 
 .dam_main {
   display: flex;
@@ -346,6 +350,7 @@ h1:hover {
   width: 66%;
 }
 
+
 .main_cont_bottom {
   margin-left: -150px;
   margin-top: 100px;
@@ -355,7 +360,7 @@ h1:hover {
   margin-bottom: 15px;
 }
 
-.main_cont_bottom > span {
+.main_cont_bottom > span{
   font-size: 35px;
   letter-spacing: -1px;
   color: #666;
@@ -370,7 +375,7 @@ h1:hover {
   justify-content: space-between;
 }
 
-.hot_place_info li {
+.hot_place_info  li {
   width: 33%;
   margin-bottom: 25px;
 }
@@ -441,19 +446,19 @@ h1:hover {
 }
 
 .event_info li span::before {
-  content: url("../doc/event_sub.png");
+  content: url( "../doc/event_sub.png" );
   position: absolute;
   left: -10px;
 }
 
 .event_info li p {
   display: inline-block;
-  width: 186px;
-  height: 25px;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    width: 186px;
+    height: 25px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .naver_search {
@@ -574,7 +579,7 @@ h1:hover {
 }
 
 /* 소개 */
-.prod_list01.active > p.sogae {
+.maib_tab_list01.active > p.sogae {
   font-size: 40px;
   font-family: "LINESeedKR-Bd";
 }
@@ -595,12 +600,12 @@ h1:hover {
   border: 1px solid #666;
 }
 
-.soga_title {
+.sogae_title {
   width: 250px;
   display: inline-block;
 }
 
-.soga_title span:nth-child(1) {
+.sogae_title span:nth-child(1) {
   font-size: 23px;
   display: block;
   color: #0c5c00;
@@ -608,7 +613,7 @@ h1:hover {
   padding-left: 10px;
 }
 
-.soga_title span:nth-child(2) {
+.sogae_title span:nth-child(2) {
   padding: 10px;
   display: inline-block;
   height: 160px;
@@ -619,6 +624,7 @@ h1:hover {
   text-overflow: ellipsis;
   letter-spacing: -1px;
 }
+
 
 .sosik_info li {
   padding: 4px 0;
@@ -633,7 +639,7 @@ h1:hover {
   border-bottom: none;
 }
 
-.sosik_info .sosik_tit {
+.sosik_info .sosik_title {
   font-size: 22px;
   font-weight: bold;
   color: #000;
@@ -694,9 +700,8 @@ h1:hover {
 .input_wrap span:nth-child(2) {
   font-size: 17px;
   color: #000;
-  height: 165px;
-  display: inline-block;
-  letter-spacing: -1px;
+  height: 165px;display: inline-block;
+  letter-spacing: -1px;;
   margin-top: 10px;
   overflow: scroll;
 }
@@ -712,7 +717,7 @@ h1:hover {
   border-bottom: 1px solid #9c9c9c;
 }
 
-.review .rev_sub {
+.review .rev_sub  {
   display: block;
   height: 150px;
   width: 790px;
@@ -731,7 +736,7 @@ h1:hover {
 }
 
 .input_img > img {
-  border: 1px solid;
+  border: 1px solid ;
   width: 300px;
   display: inline-block;
   height: 200px;
@@ -764,6 +769,7 @@ h1:hover {
   font-weight: bold;
 }
 
+
 /* 추천코스 스타일 */
 
 .course_tab {
@@ -782,7 +788,7 @@ h1:hover {
   color: #000;
 }
 
-.course_tab li a {
+.course_tab li a{
   color: #9c9c9c;
 }
 

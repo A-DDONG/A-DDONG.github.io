@@ -9,12 +9,12 @@
     <script>
         $(document).ready(function () {
           $(function () {
-           $('.head_menu_tab > li:first-child').removeClass('active');
+           $('.prod_tab > li:first-child').removeClass('active');
            $('#list01_1').removeClass('active');
 
-           $('.head_menu_tab > li > a').on('click', function (e) {
+           $('.prod_tab > li > a').on('click', function (e) {
              let tabNum = $(this).parent('li').index() + 1;
-             $('.head_menu_tab > li, #list01_1, .main_tab_list01').removeClass('active');
+             $('.prod_tab > li, #list01_1, .prod_list01').removeClass('active');
              $(this).parent('li').addClass('active');
              $('#list01_' + tabNum).addClass('active');
              return false;
@@ -24,10 +24,10 @@
 
 
         $(document).ready(function () {
-        $(".head_menu_tab > li > a").on("click", function (e) {
+        $(".prod_tab > li > a").on("click", function (e) {
           e.preventDefault();
           let tabNum = $(this).parent("li").index() + 1;
-          $(".head_menu_tab > li, .main_tab_list01").removeClass("active");
+          $(".prod_tab > li, .prod_list01").removeClass("active");
           $(this).parent("li").addClass("active");
           $("#list01_" + tabNum).addClass("active");
 
@@ -40,13 +40,13 @@
           $(function () {
 
            $('.main_tab > li:first-child').addClass('active');
-           $('#main_menu01').addClass('active');
+           $('#main_pro01').addClass('active');
 
            $('.main_tab > li > a').on('click', function (e) {
              let tabNum = $(this).parent('li').index() + 1;
-             $('.main_tab > li, #main_menu01, .main_tab_menu').removeClass('active');
+             $('.main_tab > li, #main_pro01, .main_tab_pro').removeClass('active');
              $(this).parent('li').addClass('active');
-             $('#main_menu0' + tabNum).addClass('active');
+             $('#main_pro0' + tabNum).addClass('active');
              return false;
            });
         });
@@ -60,7 +60,7 @@
 
            $('.course_tab > li > a').on('click', function (e) {
              let tabNum = $(this).parent('li').index() + 1;
-             $('.course_tab > li, #course_1, .course_cont').removeClass('active');
+             $('.course_tab > li, #course_1, .course_con').removeClass('active');
              $(this).parent('li').addClass('active');
              $('#course_' + tabNum).addClass('active');
              return false;
@@ -118,16 +118,69 @@
             iconurl.src = "../img/icon/" + icon +".png"; //iconurl로 src를 설정해줌
           });
     </script>
+    <script>
+          function goToPage(hash) {
+            window.location.href = 'main_1.html' + hash;
+          }
+    </script>
+        <script>
+          // 페이지가 로드되었을 때 실행되는 코드
+          window.onload = function() {
+            // URL의 해시 값을 가져옴
+            var hash = window.location.hash;
+            
+            // 해시 값에 따라 해당 탭을 활성화시킴
+            var tabNumber = getTabNumber(hash);
+            if (tabNumber) {
+              activateTab(tabNumber);
+            } else {
+              activateTab(1);
+            }
+          }
+  
+          // 탭을 활성화하는 함수
+          function activateTab(tabNumber) {
+            // 모든 탭 메뉴 요소와 탭 내용 요소를 가져옴
+            var tabMenuItems = document.querySelectorAll('.prod_tab li');
+            var tabContents = document.querySelectorAll('.prod_list01');
+            
+            // 모든 탭 메뉴 요소의 클래스를 제거하고 선택된 탭 메뉴에 클래스를 추가함
+            for (var i = 0; i < tabMenuItems.length; i++) {
+              tabMenuItems[i].classList.remove('active');
+            }
+            tabMenuItems[tabNumber - 1].classList.add('active');
+            
+            // 모든 탭 내용 요소의 클래스를 제거하고 선택된 탭 내용에 클래스를 추가함
+            for (var j = 0; j < tabContents.length; j++) {
+              tabContents[j].classList.remove('active');
+            }
+            tabContents[tabNumber - 1].classList.add('active');
+          }
+  
+          // 해시 값을 통해 탭 번호를 가져오는 함수
+          function getTabNumber(hash) {
+            // 해시 값이 비어있거나 #course_ 로 시작하지 않으면 null 반환
+            if (!hash || !hash.startsWith('#prod_')) {
+              return null;
+            }
+            
+            // #course_ 다음에 오는 숫자를 추출하여 반환
+            var tabNumber = hash.slice(8);
+            return parseInt(tabNumber);
+          }
+  
+      </script>
+
 
     <style>
-       .main_wrap .main_tab_list01 {display: none;}
-       .main_wrap .main_tab_list01.active {display: block;}
+       .prod_wrap .prod_list01 {display: none;}
+       .prod_wrap .prod_list01.active {display: block;}
 
-       .main_tab_menu {display: none;}
-       .main_tab_menu.active {display: block;}
+       .main_tab_pro {display: none;}
+       .main_tab_pro.active {display: block;}
 
-       .course_cont {display: none;}
-       .course_cont.active {display: block;}
+       .course_con {display: none;}
+       .course_con.active {display: block;}
 
 
     </style>
@@ -138,31 +191,31 @@
         <h3 onclick="location.href='../html/main_1.html'">담양 HOT PLACE!</h2>
         <h1 onclick="location.href='../html/main_1.html'">DAMPLES</h1>
 
-        <div class="head_menu">
-            <ul class="head_menu_tab">
+        <div class="menu-box">
+            <ul class="prod_tab">
                 <li class="active"><a href="#">소개</a>
-                  <ul class="head_drop">
-                    <li><a href="#">담양군 소개</a></li>
-                    <li><a href="#">주요 관광지</a></li>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">서브 메뉴 1</a></li>
+                    <li><a href="#">서브 메뉴 2</a></li>
                     <li><a href="#">서브 메뉴 3</a></li>
                   </ul>  
                 </li>
-                <li><a href="#">소식</a>
-                  <ul class="head_drop">
+                <li><a href="/info">소식</a>
+                  <ul class="dropdown-menu">
                     <li><a href="#">담양군 소식</a></li>
                     <li><a href="../html/event.html">행사일정</a></li>
                     <li><a href="#">서브 메뉴 6</a></li>
                   </ul>
                 </li>
                 <li><a href="#">코스추천</a>
-                  <ul class="head_drop">
+                  <ul class="dropdown-menu">
                     <li><a href="#">서브 메뉴 7</a></li>
                     <li><a href="#">서브 메뉴 8</a></li>
                     <li><a href="#">서브 메뉴 9</a></li>
                   </ul>
                 </li>
                 <li><a href="#">리뷰</a>
-                  <ul class="head_drop">
+                  <ul class="dropdown-menu">
                     <li><a href="#">서브 메뉴 10</a></li>
                     <li><a href="#">서브 메뉴 11</a></li>
                     <li><a href="#">서브 메뉴 12</a></li>
@@ -170,7 +223,7 @@
                 </li>
             </ul>
 
-            <div class="search_box">
+            <div class="search-box">
               <input type="text" placeholder="검색어를 입력해주세요">
               <button type="button" class="btn_search">
                 <img src="../doc/search.png" alt="검색">
@@ -180,7 +233,7 @@
 
       </div>
       <div class="container">
-        <div class="main_wrap">
+        <div class="prod_wrap">
 
           <!-- 담플스메인 -->
           <div class="dam_main">
@@ -191,36 +244,35 @@
               <li><a href="#">숙박</a></li>
             </ul>
             
-            <div class="main_tab_menu active" id="main_menu01">
+            <div class="main_tab_pro active" id="main_pro01">
               <div class="main_tab_cont">
                 <div class="main_cont_top">
                    <img src="../doc/지도4.png" alt="지도이미지">
                 </div>
 
                 <div class="main_cont_bottom">
-                  <img src="../doc/hotplace_tit.png" alt="HOT PLACE">
+                  <img src="../doc/hotplace_tit.png" alt="HOT PLACE" onclick="goToPage('#list01_1')">
                   <img src="../doc/main_event_sub_01.png" alt="유적지">
                   <ul class="hot_place_info">
                     <li>
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
                       <p class="hot_place_title">
-                        <span class="hp_title" >죽녹원</span>
-                        <!-- <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span> -->
-                      </p>
-  
-                    </li>
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
                         <span class="hp_title">죽녹원</span>
-                        <!-- <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span> -->
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
                       </p>
                     </li>
                     <li>
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
                       <p class="hot_place_title">
                         <span class="hp_title">죽녹원</span>
-                        <!-- <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span> -->
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
+                      </p>
+                    </li>
+                    <li>
+                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
+                      <p class="hot_place_title">
+                        <span class="hp_title">죽녹원</span>
+                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
                       </p>
                     </li>
                   </ul>
@@ -252,7 +304,7 @@
               </div>
             </div>
 
-            <div class="main_tab_menu" id="main_menu02">
+            <div class="main_tab_pro" id="main_pro02">
               <div class="main_tab_cont">
                 <div class="main_cont_top">
                    <img src="../doc/지도4.png" alt="지도이미지">
@@ -310,7 +362,7 @@
               </div>
             </div>
 
-            <div class="main_tab_menu" id="main_menu03">
+            <div class="main_tab_pro" id="main_pro03">
               <div class="main_tab_cont">
                 
                 <div class="main_cont_top">
@@ -469,48 +521,48 @@
 
 
           <!-- 탭박스 -->
-          <div class="main_tab_list01 active" id="list01_1">
+          <div class="prod_list01 active" id="list01_1">
             <img src="../doc/sogae_title.png" alt="">
             <!-- <p class="sogae">담양군 소개</p> -->
             <ul class="sogae_info">
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
+                <p class="soga_title">
                   <span>용홍사 계곡</span>
                   <span>글씨가 7줄이 넘어가면 잘리게 되어있어요. ...처리가 됩니다..et consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
               </li>
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
+                <p class="soga_title">
                   <span>용홍사 계곡</span>
                   <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
               </li>
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
+                <p class="soga_title">
                   <span>용홍사 계곡</span>
                   <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
               </li>
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
+                <p class="soga_title">
                   <span>용홍사 계곡</span>
                   <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
               </li>
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
+                <p class="soga_title">
                   <span>용홍사 계곡</span>
                   <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
               </li>
               <li>
                 <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원여름">
-                <p class="sogae_title">
+                <p class="soga_title">
                   <span>용홍사 계곡</span>
                   <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore rerum asperiores mollitia eum odit eligendi consequuntur. Reprehenderit, molestias inventore quidem saepe dolorum quos voluptatibus quasi possimus eum commodi adipisci odio.</span>
                 </p>
@@ -519,12 +571,12 @@
 
 
           </div>
-          <div class="main_tab_list01" id="list01_2">
+          <div class="prod_list01" id="list01_2">
             <img src="../doc/sosik_title.png" alt="담양군 소식" style="margin-bottom: 10px;">
             <ul class="sosik_info">
                 <li>
                   <a href="#">
-                    <p class="sosik_title">
+                    <p class="sosik_tit">
                       <!-- 공지면 .notice 일반게시글이면 .common -->
                       <span class="notice">공지</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
@@ -533,7 +585,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <p class="sosik_title">
+                    <p class="sosik_tit">
                       <span class="common">1234</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
                     <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
@@ -541,7 +593,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <p class="sosik_title">
+                    <p class="sosik_tit">
                       <span class="common">2134</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
                     <p class="sosik_sub">집에가고싶다 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
@@ -549,7 +601,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <p class="sosik_title">
+                    <p class="sosik_tit">
                       <span class="common">124</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
                     <p class="sosik_sub"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
@@ -557,7 +609,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <p class="sosik_title">
+                    <p class="sosik_tit">
                       <span class="common">45546</span>
                       2023년 여성회관 상반기 교육프로그램 수강생 및 강사 모집 안내</p>
                     <p class="sosik_sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, saepe! Sequi cumque, veritatis odit voluptatum, perferendis eveniet illo eos ipsum natus quis impedit temporibus laborum repudiandae, ex deleniti id praesentium!</p>
@@ -567,7 +619,7 @@
            
           </div>
 
-          <div class="main_tab_list01" id="list01_3">
+          <div class="prod_list01" id="list01_3">
             <img src="../doc/cource_title.png" alt="추천 코스">
 
             <ul class="course_tab">
@@ -578,7 +630,7 @@
               <li><a href="#">누구화함께</a></li>
             </ul>
 
-            <div class="course_cont active" id="course_1">
+            <div class="course_con active" id="course_1">
               <ul class="course_img">
                 <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
                 <li><img src="https://imgnn.seoul.co.kr/img/upload/2020/08/18/SSI_20200818152435.jpg" alt=""></li>
@@ -596,22 +648,22 @@
               </p>
 
             </div>
-            <div class="course_cont" id="course_2">
+            <div class="course_con" id="course_2">
               연령별2221
             </div>
-            <div class="course_cont" id="course_3">
+            <div class="course_con" id="course_3">
               연령별33
             </div>
-            <div class="course_cont" id="course_4">
+            <div class="course_con" id="course_4">
               연령별144
             </div>
-            <div class="course_cont" id="course_5">
+            <div class="course_con" id="course_5">
               55
             </div>
 
           </div>
 
-          <div class="main_tab_list01" id="list01_4">
+          <div class="prod_list01" id="list01_4">
             <img src="../doc/rew_title.png" alt="리뷰">
             <ul class="review">
               <li>
