@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+  <script>
+    $(function () {
+      $("img[usemap]").rwdImageMaps();
+      $("#img").width("100%");
+    });
+  </script>
+
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+    }
+    area {
+      border: 3px solid red;
+      background-color: red;
+      z-index: 9999;
+    }
+  </style>
+  <body>
+    <img src="../doc/지도4.png" usemap="#image-map" width="720px" />
+
+    <map name="image-map">
+      <area
+        shape="rect"
+        coords="603,952,710,1015"
+        href="../html/main_001.html"
+        target=""
+      />
+      <area shape="rect" coords="1212,321,1319,384" href="" target="" />
+      <area shape="rect" coords="977,1369,1084,1432" href="" target="" />
+    </map>
+  </body>
+</html>
