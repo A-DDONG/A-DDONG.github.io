@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메인화면</title>
-    <link rel="stylesheet" href="../css/main_001.css">
+    <link rel="stylesheet" href="../css/main_001 copy.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
       //   $(document).ready(function () {
@@ -111,6 +111,33 @@
           window.location.href = 'sogae_002.html' + hash;
         }
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  const sliderContainer = document.querySelector(".slider-container");
+  const slider = document.querySelector("#slider");
+  const sliderItems = document.querySelectorAll("#slider li");
+  const prevBtn = document.querySelector("#prevBtn");
+  const nextBtn = document.querySelector("#nextBtn");
+  const slideWidth = sliderContainer.clientWidth / 3;
+  const totalSlides = sliderItems.length;
+  let currentPosition = 0;
+
+  prevBtn.addEventListener("click", function() {
+    if (currentPosition > 0) {
+      currentPosition -= slideWidth;
+      slider.style.transform = `translateX(-${currentPosition}px)`;
+    }
+  });
+
+  nextBtn.addEventListener("click", function() {
+    const maxPosition = (totalSlides - 3) * slideWidth;
+    if (currentPosition < maxPosition) {
+      currentPosition += slideWidth;
+      slider.style.transform = `translateX(-${currentPosition}px)`;
+    }
+  });
+});
+    </script>
 
 
     <style>
@@ -196,8 +223,8 @@
 
                   <img src="../doc/hotplace_tit.png" alt="HOT PLACE" onclick="goToPage('#course_1')">
                   <img src="../doc/main_event_sub_01.png" alt="유적지" onclick="location.href='../html/sogae_002.html'">
-
-                  <ul class="hot_place_info">
+                  <div class="slider-container">
+                  <ul class="hot_place_info" id="slider">
                     <li>
                       <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지" onclick="location.href='../html/sogae_002_hot.html'">
                       <p class="hot_place_title">
@@ -228,6 +255,12 @@
                       </p>
                     </li>
                   </ul>
+                  <div class="slider-nav">
+                    <button id="prevBtn" class="slider-btn">&#60;</button>
+                    <button id="nextBtn" class="slider-btn">&#62;</button>
+                  </div>
+                </div>
+                
 
 
                   <img src="../doc/main_event_sub_02.png" alt="자연생활">
@@ -257,7 +290,6 @@
                 </div>
               </div>
             </div>
-
 
             <div class="main_tab_menu" id="main_menu02">
               <div class="main_tab_cont">
