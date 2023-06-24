@@ -371,7 +371,7 @@ h1:hover {
 }
 
 .main_cont_top > img {
-  width: 66%;
+  width: 720px;
 }
 
 .main_cont_bottom {
@@ -438,9 +438,9 @@ h1:hover {
 .main_event {
   width: 330px;
   padding-left: 10px;
-  transform: translate(660px, -2600px);
+  transform: translate(640px, -2370px);
   /* position: absolute; */
-  /* transform: translateY(-1000px); */
+  /* transform: translateX(-330px); */
   height: 1500px;
 }
 
@@ -844,7 +844,7 @@ h1:hover {
 .slider-container {
   overflow: hidden;
   position: relative;
-  width: 80%;
+  width: 53%;
 }
 
 .hot_place_info {
