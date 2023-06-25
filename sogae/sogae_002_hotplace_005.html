@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="../css/sogae_002.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <style>
-
     .swiper {
       /* display: flex; */
       width: 50%;
@@ -32,11 +31,13 @@
       height: 100%;
       object-fit: cover;
     }
-    .swiper-button-next, .swiper-button-prev {
+
+    .swiper-button-next,
+    .swiper-button-prev {
       transform: translateY(50px);
     }
   </style>
- >
+
   <style>
     .main_wrap .maib_tab_list01 {
       display: none;
@@ -62,6 +63,11 @@
       display: block;
     }
   </style>
+  <script>
+    function goToPage(hash) {
+      window.location.href = '../sogae/sogae_002.html' + hash;
+    }
+  </script>
 </head>
 
 <body>
@@ -73,10 +79,10 @@
 
         <div class="head_menu">
           <ul class="head_menu_tab">
-            <li class="active"><a href="../html/sogae_001.html">소개</a>
+            <li class="active"><a href="./sogae_001.html">소개</a>
               <ul class="head_drop">
-                <li><a href="../html/sogae_001.html">담양군 소개</a></li>
-                <li><a href="../html/sogae_002.html">주요 관광지</a></li>
+                <li><a href="./sogae_001.html">담양군 소개</a></li>
+                <li><a href="./sogae_002.html">주요 관광지</a></li>
               </ul>
             </li>
             <li><a href="../html/sosik_001.html">소식</a>
@@ -114,11 +120,11 @@
       <div class="main_wrap">
         <div class="sogae_main">
           <div class="sogae_wrap">
-            <h2 class="sogae_hp_title">핫플레이스</h2>
+            <h2 class="sogae_hp_title" onclick="goToPage('#course_1')">핫플레이스</h2>
             <div class="line"></div>
             <div class="sogae_main_title">
-              죽녹원
-              <p class="sogae_sub_title">휴양림, 산림욕장</p>
+              관방재림
+              <p class="sogae_sub_title">문화, 유적</p>
 
             </div>
             <!-- <span class="sogae_cont_text">
@@ -126,42 +132,52 @@
   
               </span>   -->
 
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="../img/hotplace/죽녹원_여름1.jpg" alt="">
+
+            <div class="sogae_slide_wrap">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="../img/hotplace/관방제림_가을.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../img/hotplace/관방제림_야경.jpg" alt="">
+                  </div>
+                  <!-- <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 4</div>
+                  <div class="swiper-slide">Slide 5</div>
+                  <div class="swiper-slide">Slide 6</div>
+                  <div class="swiper-slide">Slide 7</div>
+                  <div class="swiper-slide">Slide 8</div>
+                  <div class="swiper-slide">Slide 9</div> -->
                 </div>
-                <div class="swiper-slide">
-                  <img src="../img/hotplace/죽녹원_겨울.jpg" alt="">
-                </div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="sogae_cont_info">
+                <ul>
+                  <li>
+                    <span>주소</span>
+                    <p>전남 담양군 담양읍 객사7길 37</p>
+                  </li>
+                  <li>
+                    <span>전화번호</span>
+                    <p>061-380-2812</p>
+                  </li>
+                  <!-- <li>
+                    <span>영업시간</span>
+                    <p>(11 ~ 2월) 09:00 – 18:00 / (3 ~ 10월) 09:00 - 19:00</p>
+                  </li>
+                  <li>
+                    <span>입장료</span>
+                    <p>성인 3,000원 / 단체 2,400원</p>
+                    <p>청소년,군인 1,500원 / 단체 1,000원</p>
+                    <p>초등학생 1,000원 / 단체 600원</p>
+                  </li> -->
+                </ul>
+
+              </div>
             </div>
-            <div class="sogae_cont_info">
-              주소 : 전남 담양군 담양읍 죽녹원로 119
-              전화번호 : 061-380-2680
-              영업시간 : (11 ~ 2월) 09:00 – 18:00
-              &nbsp;(3 ~ 10월) 09:00 - 19:00
-              입장료
-              성인 3,000원 / 단체 2,400원
-              청소년,군인 1,500원 / 단체 1,000원
-              초등학생 1,000원 / 단체 600원
-              죽녹원+이이남아트센터
-              성인 4,000원
-              청소년(중고생) 군인 2,500원
-              초등학생 2,000원
-              특이사항 : 주차, 담양군민, 65세이상경로,
-              국가(참전)유공자, 장애우, 미취학아동 무료
-              홈페이지 : www.juknokwon.go.kr
-            </div>
+
           </div>
         </div>
       </div>

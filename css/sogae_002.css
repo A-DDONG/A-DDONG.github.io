@@ -22,10 +22,11 @@
   display: inline-block;
 }
 .main_tour_title {
-  font-family: "LINESeedKR-Bd";
+  font-family: "GangwonEduPowerExtraBoldA";
   font-size: 40px;
   color: #0c5c00;
   margin-right: -210px;
+
 }
 
 .line {
@@ -34,11 +35,21 @@
   margin-bottom: 50px;
   /* width: 70%; */
 }
+
 .sogae_hp_title {
   font-size: 50px;
-  font-family: "LINESeedKR-Bd";
+  font-family: "GangwonEduPowerExtraBoldA";
   /* text-align: center; */
   color: #0c5c00;
+}
+.title_tab {
+  margin-bottom: 30px;
+}
+.sogae_title {
+  font-family: "LINESeedKR-Rg";
+}
+.sogae_main {
+  padding: 25px 5px 25px 5px;
 }
 
 .sogae_main_title {
@@ -68,14 +79,31 @@
 .sogae_cont_info {
   font-size: 20px;
   font-family: "LINESeedKR-Bd";
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* padding-left: 50px; */
-  white-space: pre;
+  /* white-space: pre; */
   margin-left: 10px;
-  position: absolute;
-
+  width: 450px;
 }
+
+.sogae_cont_info ul li {
+  margin-bottom: 10px;
+}
+
+.sogae_cont_info ul li > span {
+  color: #0c5c00;
+}
+
+.sogae_cont_info ul li > span::before {
+  background: url(../doc/titbefore.png) no-repeat 0px 3px;
+  content: "";
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  margin-right: 4px;
+}
+
+.sogae_cont_info ul li > p {
+  padding-left: 35px;
+} 
 
 .sogae_wrap {
   margin-bottom: 50px;
@@ -86,4 +114,9 @@
   margin: 20px 0 20px 0;
   text-indent: 1em;
   display: block;
+}
+
+.sogae_slide_wrap {
+  display: flex;
+  justify-content: space-between;
 }
