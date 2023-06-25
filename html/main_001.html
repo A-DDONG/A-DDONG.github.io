@@ -6,6 +6,7 @@
     <title>메인화면</title>
     <link rel="stylesheet" href="../css/main_001.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
       //   $(document).ready(function () {
       //     $(function () {
@@ -123,6 +124,11 @@
        /* .course_cont {display: none;}
        .course_cont.active {display: block;} */
 
+       .tooltip {
+        position: absolute;
+        display: none;
+    }
+
 
     </style>
   </head>
@@ -189,7 +195,18 @@
               <div class="main_tab_cont">
 
                 <div class="main_cont_top">
-                   <img src="../doc/지도4.png" alt="지도이미지">
+                   <img src="../doc/핫플지도.png" alt="지도이미지" usemap="#image-map" >
+                   <map name="image-map">
+                    <area target="" alt="" title="" href="" coords="392,139,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/가마골.jpg', 360,100)">
+                    <area target="" alt="" title="" href="" coords="356,217,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/용마루길1.jpg', 320, 180)">
+                    <area target="" alt="" title="" href="" coords="420,271,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/추억의골목2.jpg', 390, 230)">
+                    <area target="" alt="" title="" href="" coords="333,379,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/딜라이트담양_내부.jpg', 300, 340)">
+                    <area target="" alt="" title="" href="" coords="186,445,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/한재골1.jpg', 150, 410)">
+                    <area target="" alt="" title="" href="" coords="468,419,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/관방제림_가을.jpg', 440, 380)">
+                    <area target="" alt="" title="" href="" coords="391,477,18" shape="circle" onmouseover="showImage(this, '../img/hotplace/메타세콰이어_봄.jpg', 360, 440)">
+                    <area target="" alt="" title="" href="" coords="459,676,24" shape="circle" onmouseover="showImage(this, '../img/hotplace/소쇄원_여름.jpg', 420, 650)">
+                </map>
+
                 </div>
 
                 <div class="main_cont_bottom">
@@ -197,63 +214,107 @@
                   <img src="../doc/hotplace_tit.png" alt="HOT PLACE" onclick="goToPage('#course_1')">
                   <img src="../doc/main_event_sub_01.png" alt="유적지" onclick="location.href='../html/sogae_002.html'">
 
-                  <ul class="hot_place_info">
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지" onclick="location.href='../html/sogae_002_hot.html'">
-                      <p class="hot_place_title">
-                        <span class="hp_title" >죽녹원</span>
-                        <span class="hp_sub">생태전시관, 인공폭포, 생태연못, 야외공연장과 2.2km에 달하는 8가지 주제의 산책로를 통한 다양한 테마의 여행 구성에 적합</span>
-                      </p>
-  
-                    </li>
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
-                        <span class="hp_title">죽녹원</span>
-                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
-                      </p>
-                    </li>
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
-                        <span class="hp_title">죽녹원</span>
-                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
-                      </p>
-                    </li>
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
-                        <span class="hp_title">죽녹원</span>
-                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
-                      </p>
-                    </li>
-                  </ul>
+                  <div class="swiper swiper1">
+                    <ul class="hot_place_info swiper-wrapper">
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/죽녹원_여름1.jpg" alt="죽녹원이미지" onclick="location.href='../html/sogae_002_hot.html'">
+                        <p class="hot_place_title">
+                          <span class="hp_title" >죽녹원</span>
+                          <span class="hp_sub">생태전시관, 인공폭포, 생태연못, 야외공연장과 2.2km에 달하는 8가지 주제의 산책로를 통한 다양한 테마의 여행 구성에 적합</span>
+                        </p>
+                      </li>
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/소쇄원_광풍각.jpg" alt="소쇄원이미지">
+                        <p class="hot_place_title">
+                          <span class="hp_title">소쇄원</span>
+                          <span class="hp_sub">한국의 민간정원 중에서 최고라는 칭송을 받는 소쇄원은 500년 가까운 세월이 흘러간 오늘까지도 많은 이들로부터 사랑을 받고있는 곳</span>
+                        </p>
+                      </li>
+                    </ul>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
 
 
                   <img src="../doc/main_event_sub_02.png" alt="자연생활">
-                  <ul class="hot_place_info">
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
-                        <span class="hp_title">죽녹원</span>
-                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
-                      </p>
-                    </li>
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
-                        <span class="hp_title">죽녹원</span>
-                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
-                      </p>
-                    </li>
-                    <li>
-                      <img src="../doc/죽녹원_여름1.jpg" alt="죽녹원이미지">
-                      <p class="hot_place_title">
-                        <span class="hp_title">죽녹원</span>
-                        <span class="hp_sub">이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 이상! 우리의 청춘이 가장 많이 품고 있는 이상! 이것이야말로 무한한 가치를 가진 것이다 사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이살 수 있는 것이</span>
-                      </p>
-                    </li>
-                  </ul>
+                  <div class="swiper swiper1">
+                    <ul class="hot_place_info swiper-wrapper">
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/메타세콰이어_봄.jpg" alt="메타세콰이어이미지" onclick="location.href='../html/sogae_002_hot.html'">
+                        <p class="hot_place_title">
+                          <span class="hp_title" >메타세콰이어</span>
+                          <span class="hp_sub">1박 2일 및 각종영화 촬영지, 분위기와 힐링 모두 챙겨 건강해지는 기분을 느낄 수 있는 곳</span>
+                        </p>
+    
+                      </li>
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/용마루길1.jpg" alt="용마루길이미지">
+                        <p class="hot_place_title">
+                          <span class="hp_title">용마루길</span>
+                          <span class="hp_sub">최근 보수 공사를 통해 노후구간 교체와 안전사고 예방을 해 더욱 더 깔끔해지고 멋져진 산책로 코스, 담양호 전체를 수변길을 통해 보고, 출렁다리의 재미를 느낄 수 있는 곳</span>
+                        </p>
+                      </li>
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/가마골.jpg" alt="가마골이미지">
+                        <p class="hot_place_title">
+                          <span class="hp_title">가마골</span>
+                          <span class="hp_sub">자연적으로 만들어진 계곡과 그 길을 따라 조성된 생태공원을 동시에 즐길 수 있고, 주변 가까운 곳에 식당과 숙소가 있어 힐링과 휴식 그리고 가족 나들이에 적합</span>
+                        </p>
+                      </li>
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/한재골1.jpg" alt="한재골이미지">
+                        <p class="hot_place_title">
+                          <span class="hp_title">한재골</span>
+                          <span class="hp_sub">하류보단 상류에서 놀기 적합하고, 나무의 그늘과 계곡의 시원함이 더해져 여름 피서지로 안성 맞춤</span>
+                        </p>
+                      </li>
+                    </ul>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+
+                  <img src="../doc/main_event_sub_02.png" alt="자연생활">
+                  <div class="swiper swiper1">
+                    <ul class="hot_place_info swiper-wrapper">
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/관방제림_가을.jpg" alt="관방제림이미지" onclick="location.href='../html/sogae_002_hot.html'">
+                        <p class="hot_place_title">
+                          <span class="hp_title" >관방제림</span>
+                          <span class="hp_sub">쭉 뻗은 산책로를 보유해 걷기, 자전거 타기에 좋으며 곳곳에 있는 포토스팟으로 유명한 곳</span>
+                        </p>
+                      </li>
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/추억의골목1.jpg" alt="추억의골목이미지" height="269px">
+                        <p class="hot_place_title">
+                          <span class="hp_title">추억의골목</span>
+                          <span class="hp_sub">옛날의 길거리 모습, 추억이 떠오르는 레트로 감성 핫플레이스가족, 연인, 친구 모두와 함께 가기 좋은 곳으로 다양하고 특별한 컨셉의 포토스팟과 볼거리가 있는 곳</span>
+                        </p>
+                      </li>
+                    </ul>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+                  <img src="../doc/main_event_sub_02.png" alt="자연생활">
+                  <div class="swiper swiper1">
+                    <ul class="hot_place_info swiper-wrapper">
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/딜라이트담양_외관.jpg" alt="딜라이트담양이미지" onclick="location.href='../html/sogae_002_hot.html'">
+                        <p class="hot_place_title">
+                          <span class="hp_title" >딜라이트담양</span>
+                          <span class="hp_sub">천 년의 역사를 간직한 담양의 생태와 인문학을 재해석하여 체험형 미디어를 전시한 담양의 최대규모 미디어 아트 전시관</span>
+                        </p>
+                      </li>
+                      <li class="swiper-slide">
+                        <img src="../img/hotplace/테테루테마파크1.jpg" alt="테테루테마파크이미지" height="269px">
+                        <p class="hot_place_title">
+                          <span class="hp_title">테테루테마파크</span>
+                          <span class="hp_sub">계절별 썰매장, 빙어잡이는 물론, 이쁜 산책길을 겸비한 가든까지 힐링과 재미를 모두 챙길 수 있는 곳</span>
+                        </p>
+                      </li>
+                    </ul>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -262,7 +323,21 @@
             <div class="main_tab_menu" id="main_menu02">
               <div class="main_tab_cont">
                 <div class="main_cont_top">
-                   <img src="../doc/지도4.png" alt="지도이미지">
+                   <img src="../doc/먹방지도.png" alt="지도이미지" usemap="#image-map2">
+                   <map name="image-map2">
+                    <area target="" alt="" title="" href="" coords="387,135,25" shape="circle" onmouseover="showImage(this, '../img/meokbang/식당/항아리레스토랑카페돈까스.jpg', 360,90)">
+                    <area target="" alt="" title="" href="" coords="264,276,25" shape="circle" onmouseover="showImage(this, '../img/meokbang/식당/요리온스테이크.jpg', 230,230)" >
+                    <area target="" alt="" title="" href="" coords="454,249,25" shape="circle" onmouseover="showImage(this, '../img/meokbang/카페/담순로153케익.jpg', 430,200)">
+                    <area target="" alt="" title="" href="" coords="182,366,25" shape="circle" onmouseover="showImage(this, '../img/meokbang/카페/프룩커피_외관.jpg', 150,320)">
+                    <area target="" alt="" title="" href="" coords="374,370,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/식당/원조대나무국수외관.jpg', 340,330)">
+                    <area target="" alt="" title="" href="" coords="425,351,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/식당/뚝방국수외관.jpg', 390,310)">
+                    <area target="" alt="" title="" href="" coords="342,405,21" shape="circle" onmouseover="showImage(this, '../img/meokbang/카페/무화과나무케익.jpg', 310,370)">
+                    <area target="" alt="" title="" href="" coords="280,457,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/카페/아우터베이크하우스외관.jpg', 250,420)">
+                    <area target="" alt="" title="" href="" coords="500,460,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/카페/소예르커피.jpg', 470,420)">
+                    <area target="" alt="" title="" href="" coords="320,574,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/카페/트루와지엠.jpg', 290, 540)">
+                    <area target="" alt="" title="" href="" coords="374,548,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/식당/담양애꽃_음식.jpg', 340, 510)">
+                    <area target="" alt="" title="" href="" coords="449,694,22" shape="circle" onmouseover="showImage(this, '../img/meokbang/식당/대가사진.jpg', 420,660)">
+                </map>
                 </div>
                 <div class="main_cont_bottom">
                   <img src="../doc/mukbang_tit.png" alt="mukbang" onclick="goToPage('#course_2')">
@@ -314,13 +389,24 @@
                         </p>
                       </li>
                 </div>
+
               </div>
             </div>
 
             <div class="main_tab_menu" id="main_menu03">
               <div class="main_tab_cont">
                 <div class="main_cont_top">
-                   <img src="../doc/지도4.png" alt="지도이미지">
+                   <img src="../doc/숙박지도.png" alt="지도이미지" usemap="#image-map3" name="hotel" id="map">
+                   <map name="image-map3">
+                    <area target="" alt="" title="" href="" coords="389,126,34" shape="circle" onmouseover="showImage(this, '../img/sukbak/펜션/글리제977_외관.jpg', 360,70)">
+                    <area target="" alt="" title="" href="" coords="350,169,34" shape="circle" onmouseover="showImage(this, '../img/sukbak/펜션/까망감스테이_외관.jpg', 320, 120)">
+                    <area target="" alt="" title="" href="" coords="400,295,34" shape="circle" onmouseover="showImage(this, '../img/sukbak/캠핑/라온캠핑장1.jpg', 370, 240)">
+                    <area target="" alt="" title="" href="" coords="167,392,22" shape="circle" onmouseover="showImage(this, '../img/sukbak/게하/선인장호스텔외관.jpg', 130, 350)">
+                    <area target="" alt="" title="" href="" coords="356,464,22" shape="circle" onmouseover="showImage(this, '../img/sukbak/게하/당나귀숲.jpg', 330, 420)">
+                    <area target="" alt="" title="" href="" coords="495,482,22" shape="circle" onmouseover="showImage(this, '../img/sukbak/호텔/호텔드몽드외관.jpg', 470, 440)">
+                    <area target="" alt="" title="" href="" coords="386,576,22" shape="circle" onmouseover="showImage(this, '../img/sukbak/게하/담양을담다외부.jpg', 360, 540)">
+                </map>
+
                 </div>
                 <div class="main_cont_bottom">
                   <img src="../doc/lodgment_tit.png" alt="숙박" onclick="goToPage('#course_3')">
@@ -455,17 +541,22 @@
                 <br />
                 <span id="humidity"></span>
               </div>
-              <div class="blog" onclick ="window.open('https://blog.naver.com/damyanggun')">
-                <p class="blog_top">담양군 공식 블로그</p>
-                <div class="blog_title">
-                <img src="../doc/블로그1.png" alt="블로그이미지" width=40px height="40px">
-                <p>대숲맑은담양</p>
+              <div class="banner">
+                <div class="blog" onclick ="window.open('https://blog.naver.com/damyanggun')">
+                  <img src="../doc/블로그.png" alt="블로그이미지">
+                </div>
+                <div class="instagram" onclick ="window.open('https://www.instagram.com/damyang.gun/')">
+                  <img src="../doc/인스타.png" alt="인스타이미지">
+                </div>
+                <div class="youtube" onclick ="window.open('https://www.youtube.com/channel/UCFS5qcsGXRQku904_ygBSqw')">
+                  <img src="../doc/유튜브.png" alt="유튜브이미지">
+                </div>
+                <div class="damyang_web" onclick ="window.open('https://www.damyang.go.kr/tour/index.damyang')">
+                  <img src="../doc/심볼.jpg" alt="담양군이미지" width="40px" height="40px">
+                  <p>담양군 문화관광</p>
+                </div>
               </div>
-              </div>
-              <div class="damyang_web" onclick ="window.open('https://www.damyang.go.kr/tour/index.damyang')">
-                <img src="../doc/심볼.jpg" alt="담양군이미지" width="40px" height="40px">
-                <p>담양군 문화관광</p>
-              </div>
+
             </div>
           </div>
         </div>
@@ -473,6 +564,44 @@
       <div id="footer">
       </div>
     </div>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper1", {
+        slidesPerView : 3,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
+    });
+    </script>
+
+<script>
+  function showImage(area, imagePath, offsetX, offsetY) {
+    var imageWidth = 200; // 이미지의 가로 크기 (픽셀 단위)
+    var imageHeight = 150; // 이미지의 세로 크기 (픽셀 단위)
+
+    var imageElement = document.createElement('img');
+    imageElement.src = imagePath;
+    imageElement.style.position = 'fixed';
+
+    // 이미지를 area의 위치에 따라 조정
+    var areaRect = area.getBoundingClientRect();
+    var imageLeft = areaRect.left + offsetX; // 이미지의 왼쪽 위치
+    var imageTop = areaRect.top + offsetY; // 이미지의 상단 위치
+
+    imageElement.style.left = imageLeft + 'px';
+    imageElement.style.top = imageTop + 'px';
+    imageElement.style.width = imageWidth + 'px';
+    imageElement.style.height = imageHeight + 'px';
+    document.body.appendChild(imageElement);
+
+    area.addEventListener('mouseout', function() {
+      imageElement.remove();
+    });
+  }
+</script>
+
     
   </body>
 </html>
