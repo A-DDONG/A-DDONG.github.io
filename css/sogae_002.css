@@ -25,7 +25,10 @@
   font-family: "GangwonEduPowerExtraBoldA";
   font-size: 40px;
   color: #0c5c00;
-  margin-right: -210px;
+  margin-right: -210px
+}
+.main_tour_title:hover {
+  cursor: pointer;
 }
 
 .line {
@@ -40,7 +43,12 @@
   font-family: "GangwonEduPowerExtraBoldA";
   /* text-align: center; */
   color: #0c5c00;
+  display: inline-block;
 }
+.sogae_hp_title:hover {
+  cursor: pointer;
+}
+
 .title_tab {
   margin-bottom: 30px;
 }
@@ -137,4 +145,13 @@
   color: black;
   /* padding-top: 30px; */
   font-family: "SBAggroB";
+}
+
+.swiper-slide img {
+  width: 568px;
+  height: 368px;
+}
+
+.sogae_info > li:hover {
+  cursor: pointer;
 }

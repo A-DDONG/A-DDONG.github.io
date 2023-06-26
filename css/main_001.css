@@ -488,12 +488,14 @@ h1:hover {
   text-align: center;
   color: #000;
   position: relative;
+  transform: translateY(-5px);
 }
 
 .event_info li span::before {
   content: url("../doc/event_sub.png");
   position: absolute;
   left: -10px;
+  transform: translateY(-3px);
 }
 
 .event_info li p {
