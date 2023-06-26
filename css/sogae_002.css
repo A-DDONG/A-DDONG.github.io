@@ -119,3 +119,22 @@
   display: flex;
   justify-content: space-between;
 }
+
+.symbol {
+  text-align: center;
+}
+
+.symbol img {
+  margin-top: 50px;
+}
+.symbol img:hover {
+  cursor: pointer;
+}
+.clickbox {
+  margin-top: 30px;
+  font-size: 50px;
+  display: block;
+  color: black;
+  /* padding-top: 30px; */
+  font-family: "SBAggroB";
+}

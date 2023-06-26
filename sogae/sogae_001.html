@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메인화면</title>
-    <link rel="stylesheet" href="../../css/main_001.css">
+    <link rel="stylesheet" href="../css/main_001.css">
+    <link rel="stylesheet" href="../css/sogae_002.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
 
@@ -32,12 +33,6 @@
        .main_tab_menu {display: none;}
        .main_tab_menu.active {display: block;}
 
-       .symbol {
-        text-align: center;
-        transform: scale(2);
-        position: relative;
-
-       }
 
     </style>
   </head>
@@ -90,20 +85,23 @@
       <div class="container">
         <div class="main_wrap">
           <div class="main_tab_list01" id="list01_3">
-            <img src="../doc/sogae_title.png" alt="담양군소개">
-            <img src="../doc/담양군심볼.png" alt="">
+            <div class ="sogae_main">
+            <h3 class="main_tour_title">담양군 소개</h3>
+            <div class="symbol">
+              <img src="../doc/담양군심볼.png" alt="" width="360px" onclick="window.open('https://www.damyang.go.kr/index.damyang?menuCd=DOM_000000103003001000')">
+              <div class="clickbox">
+                <p>심볼 클릭!</p>
+              </div>
+            </div>
           </div>
-          <div class="symbol">
-            <img src="../doc/담양군심볼.png" alt="">
-          </div>
-          <span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni velit molestias repellat sequi explicabo iusto maxime eum optio dolorum harum quasi accusamus rem quo voluptas, quos alias, quam ab. Amet.
-          </span>
+
         </div>
+        
+        </div>
+
       </div>
-      <div id="footer">
+       <div id="footer"></div>
       </div>
-    </div>
     
   </body>
 </html>

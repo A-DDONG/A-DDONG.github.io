@@ -506,6 +506,9 @@ h1:hover {
   text-overflow: ellipsis;
   align-items: center;
 }
+.main_event_calender {
+  cursor: pointer;
+}
 
 .naver_search {
   top: 10%;
@@ -564,6 +567,9 @@ h1:hover {
     url("../doc/죽녹원_여름1.jpg"); */
   background-size: cover;
 }
+.card:hover {
+  cursor: pointer;
+}
 .card .nowtime {
   font-size: 30px;
   padding-top: 10px;
@@ -620,9 +626,8 @@ h1:hover {
 .banner > div {
   padding: 10px 0 10px 0;
 }
-.damyang_web {
+/* .damyang_web {
   position: relative;
-  /* top: 30%; */
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -640,7 +645,7 @@ h1:hover {
 }
 .damyang_web :hover {
   cursor: pointer;
-}
+} */
 /* 배너 끝 */
 
 /* 소개 */
