@@ -4,51 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAMPLES</title>
-    <link rel="stylesheet" href="../css/index.css" />
+    <title>담양여행의모든것</title>
+    <link rel="stylesheet" href="../css/index2.css" />
     <style>
-      .fadeIn {
-        opacity: 0;
-        animation: fadeIn 3s forwards;
+      .fadeOut {
+        animation: fadeOut 3s forwards;
       }
 
-      @keyframes fadeIn {
+      @keyframes fadeOut {
         0% {
-          opacity: 0;
+          opacity: 1;
         }
         100% {
-          opacity: 1;
+          opacity: 0;
         }
       }
     </style>
     <script>
-      window.onload = function () {
-        var damplesWrapper = document.querySelector(".wrapper");
-        damplesWrapper.classList.add("fadeIn");
-      };
+      setTimeout(function () {
+        var damyangTitle = document.querySelector(".title");
+        damyangTitle.classList.add("fadeOut");
+        setTimeout(function () {
+          window.location.href = "./index2.html";
+        }, 3000);
+      }, 3000);
     </script>
   </head>
   <body>
-    <div class="fadeIn">
-      <div class="wrapper">
-        <div class="focus">DAMPLES</div>
-        <div class="mask">
-          <div class="text">DAMPLES</div>
-        </div>
-      </div>
-      <div
-        class="click"
-        style="cursor: pointer"
-        onclick="location.href='./main_001.html';"
-      >
-        <div>Cick Here</div>
-        <img src="../doc/bamboo.png" alt="Bamboo" class="bamboo_image" />
-      </div>
+    <div class="title">
+      <h1 data-back="DAMYANG">DAMYANG</h1>
     </div>
-    <div class="copy">
-      <footer>
-        <address>CopyRight &copy; damples@damples.com</address>
-      </footer>
-    </div>
+    <footer>
+      <address>CopyRight &copy; damples@damples.com</address>
+    </footer>
   </body>
 </html>
